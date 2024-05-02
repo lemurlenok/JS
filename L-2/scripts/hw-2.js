@@ -85,56 +85,16 @@ console.log(book3)
 // - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
 
 let users = [
-    {
-        name: 'Sonya',
-        password: "156%sg",
-        username: '@Sonya'
-    },
-    {
-        name: 'Nikita',
-        password: "2673363",
-        username: '@Nikita'
-    },
-    {
-        name: 'Dima',
-        password: "tevb6829",
-        username: '@Dima'
-    },
-    {
-        name: 'Alex',
-        password: "263",
-        username: '@Dima'
-    },
-    {
-        name: 'Tosya',
-        password: "jb25*lyn",
-        username: '@Tosya'
-    },
-    {
-        name: 'Andrew',
-        password:"3gte",
-        username: '@Andrew'
-    },
-    {
-        name: 'Pasha',
-        password:"4yln6dj$",
-        username: '@Pasha'
-    },
-    {
-        name: 'Sofia',
-        password:"bjr89#gfs",
-        username: '@Sofia'
-    },
-    {
-        name: 'Danya',
-        password:"b298&tn#",
-        username: '@Danya'
-    },
-    {
-        name: 'Orestes',
-        password: "72683gh@",
-        username: '@Orestes'
-    }
+    {name: 'Sonya',  username: '@Sonya', password: "156%sg"},
+    {name: 'Nikita', username: '@Nikita', password: "2673363"},
+    {name: 'Dima', username: '@Dima', password: "tevb6829"},
+    {name: 'Alex', username: '@Dima', password: "263"},
+    {name: 'Tosya', username: '@Tosya', password: "jb25*lyn"},
+    {name: 'Andrew', username: '@Andrew', password:"3gte"},
+    {name: 'Pasha', password:"4yln6dj$", username: '@Pasha'},
+    {name: 'Sofia', username: '@Sofia', password:"bjr89#gfs"},
+    {name: 'Danya', username: '@Danya', password:"b298&tn#"},
+    {name: 'Orestes', username: '@Orestes', password: "72683gh@"}
 ]
 
 console.log(users [0].password);
