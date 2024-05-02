@@ -245,7 +245,7 @@ if (N1 > N2){
 
 
 let variableX = null;
-let X = !variableX === false ? 'default' : variableX;
+let X = !!variableX === false ? 'default' : variableX;
 console.log(X);
 
 
