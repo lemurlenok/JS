@@ -3,7 +3,7 @@
 // - Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
 
 let arr = ['name', 19, 'book', '-153', 0, 'true', 2, 'crazy bee', 'no milk', 'husband'];
-console.log(arr);
+// console.log(arr);
 console.log(arr[0]);
 console.log(arr[1]);
 console.log(arr[2]);
@@ -46,37 +46,21 @@ let book1 = {
     pageCount: 176,
     genre: 'Література / Художня',
     authors: [
-        {
-           name: 'Slava Svitova',
-           age: 32
-        },
-        {
-            name: 'Maxim Fedorchenko',
-            age: 29
-        },
-        {
-            name: 'Bohdan Kovalchuk',
-            age: 33
-        }
+        {name: 'Slava Svitova', age: 32},
+        {name: 'Maxim Fedorchenko', age: 29},
+        {name: 'Bohdan Kovalchuk', age: 33}
     ]
+}
 
-    }
-    let book2 = {
-        tetle: 'George and the Unbreakable Code ',
-        pageCount: 312,
-        genre: 'science fiction',
-        authors: [
-            {
-                name: 'Lucy Hawking',
-                age: 53
-            },
-            {
-                name: 'Stephen Hawking',
-                age: 76
-            },
-
-        ]
-    }
+let book2 = {
+    tetle: 'George and the Unbreakable Code ',
+    pageCount: 312,
+     enre: 'science fiction',
+     authors: [
+         {name: 'Lucy Hawking', age: 53},
+         {name: 'Stephen Hawking',age: 76},
+     ]
+}
 
 let book3 = {
     tetle: 'Gwendy is Button Box',
@@ -285,6 +269,8 @@ switch (y){
 //     - Користувач вводить або має два числа.
 //         Потрібно знайти та вивести максимальне число з тих двох .
 //         Також потрібно врахувати коли введені рівні числа.
+
+
 
 //
 //     - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
