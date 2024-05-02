@@ -233,21 +233,23 @@ let N1 = +prompt('введіть перше число');
 let N2 = +prompt('введіть друге число');
 
 if (N1 > N2){
-    console.log(N1 + ' ' + 'max');
+    console.log(N1);
 }else if (N2 > N1){
     console.log(N2 + ' ' + 'max');
 }else if (N1 === N2){
-    console.log('the numbers are equal');
+    console.log('рівні числа');
 }
 
 //  - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
 //  буде присвоювати змінній х значення "default"  якщо ви намагаєтесь присвоїти в неї falsy-значення (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).
 
 
-let variableX = null;
-let X = !!variableX === false ? 'default' : variableX;
-console.log(X);
-
+let variable = 0;
+if (!variable) {
+    console.log('default')
+} else {
+    console.log('true')
+}
 
 //  - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
 
@@ -260,20 +262,33 @@ let coursesAndDurationArray = [
     {title: 'Frontend', monthDuration: 4}
     ]
 if (coursesAndDurationArray[0].monthDuration > 5){
-    console.log(coursesAndDurationArray[0].title + ' ' + 'Супер');
-}
+    console.log('Супер')
+    } else {
+        console.log(coursesAndDurationArray[0].monthDuration)
+    }
 if (coursesAndDurationArray[1].monthDuration > 5){
-    console.log(coursesAndDurationArray[1].title + ' ' + 'Супер');
-}
+    console.log('Супер')
+    } else {
+        console.log(coursesAndDurationArray[1].monthDuration)
+    }
+
 if (coursesAndDurationArray[2].monthDuration > 5){
-    console.log(coursesAndDurationArray[2].title + ' ' + 'Супер');
-}
+    console.log('Супер')
+    } else {
+        console.log(coursesAndDurationArray[2].monthDuration)
+    }
+
 if (coursesAndDurationArray[3].monthDuration > 5){
-    console.log(coursesAndDurationArray[3].title + ' ' + 'Супер');
-}
+    console.log('Супер')
+    } else {
+        console.log(coursesAndDurationArray[3].monthDuration)
+    }
+
 if (coursesAndDurationArray[4].monthDuration > 5){
-    console.log(coursesAndDurationArray[4].title + ' ' + 'Супер');
+    console.log(coursesAndDurationArray[4].title + ' ' +'Супер');
 }
 if (coursesAndDurationArray[5].monthDuration > 5){
-    console.log(coursesAndDurationArray[5].title + ' ' + 'Супер');
-}
+    console.log('Супер')
+    } else {
+        console.log('-')
+    }
