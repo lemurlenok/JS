@@ -89,16 +89,21 @@ for (let i =0; i <participants .length; i++) {
 // </div>
 // Замість TITLE PRICE IMAGE - підставити відповідні поля з об'єкту
 
-// function writer (productTitle, price, image) {
-//     document.write(`<div class="product-card">
-//             <h3 class="product-title>${productTitle} ${price}</h3>
-//             <img src="${image}" alt="" class="product-image">
-//         </div>`
-//
-//     )
-// }
-//         write('milk', 22, src="`img/milk.jpg` alt=`jpg`)
+function writer (productTitle, price, image) {
+    document.write(
+        `
+        <div class="product-card">
+            <h3 class="product-title>${productTitle} ${price}</h3>
+            <img src="${image}" alt="" class="product-image">
+        </div>
+        `
+    )
+}
 
+    writer('milk', 22, src="https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'", alt=`jpg`);
+    writer('juice', 27, src="https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'");
+    writer('tomato', 47, src="'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'");
+    writer('tea', 15, src="'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'")
 
 // є масив
 // let users = [
@@ -136,7 +141,6 @@ let users = [
 for (const user of users) {
     for (const filedName in user) {
         console.log(user['status'])
-        
     }
     
 }
