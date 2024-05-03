@@ -244,7 +244,7 @@ if (N1 > N2){
 //  буде присвоювати змінній х значення "default"  якщо ви намагаєтесь присвоїти в неї falsy-значення (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).
 
 
-let variable = 0;
+let variable = null;
 if (!variable) {
     console.log('default')
 } else {
