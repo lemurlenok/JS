@@ -1,7 +1,7 @@
 
 //- За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
 
-let users = [
+let participants  = [
     {name: 'Sonya',  username: '@Sonya', age: 18},
     {name: 'Nikita', username: '@Nikita', age: 21},
     {name: 'Dima', username: '@Dima', age: 27},
@@ -13,10 +13,10 @@ let users = [
     {name: 'Danya', username: '@Danya', age: 19},
     {name: 'Orestes', username: '@Orestes', age: 30}
 ]
-for (let i =0; i <users.length; i++) {
-    const user = users[i];
+for (let i =0; i <participants .length; i++) {
+    const participant = participants [i];
     document.write(`<div>
-                        <h2>${user.name} - ${user.username} - ${user.age}</h2>
+                        <h2>${participant.name} - ${participant.username} - ${participant.age}</h2>
                    </div>`
     )
 }
@@ -89,15 +89,15 @@ for (let i =0; i <users.length; i++) {
 // </div>
 // Замість TITLE PRICE IMAGE - підставити відповідні поля з об'єкту
 
-function writer (productTitle, price, image) {
-    document.write(`<div class="product-card">
-            <h3 class="product-title>${productTitle} ${price}</h3>
-            <img src="${image}" alt="" class="product-image">
-        </div>`
-
-    )
-}
-        write('milk', 22, src="`img/milk.jpg` alt=`jpg`)
+// function writer (productTitle, price, image) {
+//     document.write(`<div class="product-card">
+//             <h3 class="product-title>${productTitle} ${price}</h3>
+//             <img src="${image}" alt="" class="product-image">
+//         </div>`
+//
+//     )
+// }
+//         write('milk', 22, src="`img/milk.jpg` alt=`jpg`)
 
 
 // є масив
@@ -118,3 +118,25 @@ function writer (productTitle, price, image) {
 //     - користувачів зі статусом true
 // - користувачів зі статусом false
 // - користувачів які старші за 30 років
+
+let users = [
+     {name: 'vasya', age: 31, status: false},
+     {name: 'petya', age: 30, status: true},
+     {name: 'kolya', age: 29, status: true},
+     {name: 'olya', age: 28, status: false},
+     {name: 'max', age: 30, status: true},
+     {name: 'anya', age: 31, status: false},
+     {name: 'oleg', age: 28, status: false},
+     {name: 'andrey', age: 29, status: true},
+     {name: 'masha', age: 30, status: true},
+     {name: 'olya', age: 31, status: false},
+     {name: 'max', age: 31, status: true}
+]
+
+for (const user of users) {
+    for (const filedName in user) {
+        console.log(user['status'])
+        
+    }
+    
+}

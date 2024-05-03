@@ -113,39 +113,71 @@ console.log(users [9].password)
 
 let weather = [
     {
-        morning: '+2',
-        day: '+10',
-        evening: '+5'
-    },
-    {
-        morning: '0',
-        day: '-2',
-        evening: '+3'
-    },
-    {
-        morning: '+4',
-        day: '+15',
-        evening: '+11'
-    },
-    {
-        morning: '+9',
-        day: '+21',
-        evening: '+5'
-    },
-    {
-        morning: '-1',
-        day: '+6',
-        evening: '+3'
-    },
-    {
-        morning: '+4',
-        day: '+11',
-        evening: '+13'
-    },
-    {
-        morning: '+12',
-        day: '+20',
-        evening: '+18'
+        id: 1,
+        monday:{
+            temperature: [
+                {name: 'morning', value: '+2'},
+                {name: 'day', value: '+10'},
+                {name: 'evening', value: '+5'}
+            ]
+        },
+
+        id: 2,
+        tuesday:{
+            temperature: [
+                {name: 'morning', value: '0'},
+                {name: 'day', value: '-2'},
+                {name: 'evening', value: '+3'}
+            ]
+        },
+
+        id: 3,
+        Wednesday:{
+            temperature: [
+                {name: 'morning', value: '+4'},
+                {name: 'day', value: '+15'},
+                {name: 'evening', value: '+11'}
+            ]
+        },
+
+        id: 4,
+        Thursday:{
+            temperature: [
+                {name: 'morning', value: '+2'},
+                {name: 'day', value: '+10'},
+                {name: 'evening', value: '+5'}
+            ]
+        },
+
+        id: 5,
+        Friday:{
+            temperature: [
+                {name: 'morning', value: '+9'},
+                {name: 'day', value: '+21'},
+                {name: 'evening', value: '+5'}
+
+            ]
+        },
+
+        id: 6,
+        Saturday:{
+            temperature: [
+                {name: 'morning', value: '+4'},
+                {name: 'day', value: '+11'},
+                {name: 'evening', value: '+13'}
+
+            ]
+        },
+        id: 7,
+        Sunday:{
+            temperature: [
+                {name: 'morning', value: '+12'},
+                {name: 'day', value: '+20'},
+                {name: 'evening', value: '+18'}
+            ]
+        },
+        month: 'September',
+        year: 2024
     }
 ]
 
