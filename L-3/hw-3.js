@@ -115,7 +115,10 @@ for (let i = 0; i < products. length; i++) {
     const product = products[i]
     document.write(`<div class="product-card">
             <h3 class="product-title"> ${product.title} ${product.price}</h3>
-            <img src="${product.image}" alt="" class="product-image">
+            <div>
+                <img src="${product.image}" alt="" class="product-image">
+</div>
+            
         </div>`)
 }
 
@@ -154,6 +157,29 @@ let users = [
 ]
 
 for (let i = 0; i<users.length ; i++) {
-    document.write(`<h2> ${users [i].status}</h2>`)
+    if (users [i].status === false){
+        continue;
     }
-    
+    document.write(`<h2> ${users[i].name}, ${users [i].status}</h2>`)
+}
+for (let i = 0; i<users.length ; i++) {
+    if (users [i].status === true){
+        continue;
+    }
+    document.write(`<h2> ${users [i].status}, ${users[i].name}</h2>`)
+}
+for (let i = 0; i<users.length ; i++) {
+    let user = users[i];
+    if (users [i].age <31){
+        continue;
+    }
+    console.log(user[`name`], user[`age`]);
+}
+
+    // let i =0
+    // while (i<users.length){
+    //     if (users [i].status === true){
+    //         console.log(users[i]);
+    //         i++;
+    //     }
+    // }
