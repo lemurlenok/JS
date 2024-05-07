@@ -23,18 +23,19 @@ for (const participant of participants) {
 //-----------------------------------------------
 //- За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
 
-    for (let i = 0; i < 10; i++) {
+    for (let b = 0; b < 10; b++) {
         let magazine = {
-            title: "Назва журналу " + (i + 1),
-            author: "Автор журналу " + (i + 1),
-            pageCount: "Кількість сторінок" + (i + 1)
-
+            title: "Назва" + (b + 1),
+            author: "Автор" + (b + 1),
+            description: "Текст" + (b + 1)
         };
-        document.write('<div>');
-        document.write(`<h2>Журнал ${i + 1}: ${magazine.title}</h2>`);
-        document.write(`<p>Автор: ${magazine.author}</p>`);
-        document.write(`<p>Кількість сторінок: ${magazine.pageCount}</p>`);
-        document.write('</div>');
+
+        let magazineCard = `<div>
+                        <h3>${magazine.title}</h3>
+                        <p>Автор: ${magazine.author}</p>
+                        <p>${magazine.description}</p>
+    </div>`;
+        document.write(magazineCard);
     }
 
 //-----------------------------------------------
