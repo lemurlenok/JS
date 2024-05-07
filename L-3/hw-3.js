@@ -75,8 +75,8 @@ let CrazyRabbit = 0;
     };
     let f = 0;
     while (f < 20) {
-        let bookIndex = f % Object.keys(books).length;
-        let book = books[bookIndex];
+        let bookIn = f % Object.keys(books).length;
+        let book = books[bookIn];
         document.write('<h1>Книга' + (f + 1) + ':' + book.title + '</h1>');
         document.write('<p>Автор: ' + book.author + '</p>');
         document.write('<p>Кількість сторінок: ' + book.pageCount + '</p>');
