@@ -33,11 +33,9 @@ for (const participant of participants) {
 
 let CrazyRabbit = 0;
 while (CrazyRabbit < 20) {
-    document.write(`<div class="CrazyRabbit"> :
- <h1>Зовнішність Crazy Rabbit може змінюватися в залежності від його настрою: від безтурботної посмішки до дивакуватих виразів обличчя, завжди підкресленої його незбагненною енергією.(${CrazyRabbit + 1})
+    document.write(`<h1 class="CrazyRabbit"> Зовнішність Crazy Rabbit може змінюватися в залежності від його настрою: від безтурботної посмішки до дивакуватих виразів обличчя, завжди підкресленої його незбагненною енергією.(${CrazyRabbit + 1})
    
- </h1>
- </div>`);
+ </h1>`);
     CrazyRabbit++;
 
 }
@@ -190,7 +188,7 @@ let users = [
         let user = users[i];
         if (users[i].status === true) {
             console.log(user.name, user.status);
-            // document.write(`<h2> ${users[i].name}: ${users [i].status}</h2>`)
+            document.write(`<h2> ${users[i].name}: ${users [i].status}</h2>`)
         }
     }
 
@@ -198,7 +196,7 @@ let users = [
 for (let i = 0; i < users.length ; i++) {
     if (users [i].status === false) {
         console.log(users[i].status, users[i].name)
-        // document.write(`<ul class="dw"> ${users [i].status}, ${users[i].name}</ul>`)
+        document.write(`<h2> ${users [i].status}, ${users[i].name}</h2>`)
     }
 }
 
@@ -207,6 +205,7 @@ for (let i = 0; i < users.length ; i++) {
     while (i < users.length) {
         if (users[i].age >30) {
             console.log(users[i].name, users[i].age, 'age');
+            document.write(`<h2> ${users[i].name}, ${users[i].age} рік`)
         }
         i++;
 
