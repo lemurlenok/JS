@@ -20,13 +20,15 @@ for (const participant of participants) {
     )
 }
 
+
+//-----------------------------------------------
 //- За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
 
     for (let i = 0; i < 10; i++) {
         document.write('<div class="block">Це блок #' + i + '</div>');
     }
 
-
+//-----------------------------------------------
 //- За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
 
 let CrazyRabbit = 0;
@@ -40,6 +42,8 @@ while (CrazyRabbit < 20) {
 
 }
 
+
+//-----------------------------------------------
 //- За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
 let bees = 0;
 while (bees < 20) {
@@ -54,6 +58,7 @@ while (bees < 20) {
     bees++;
 }
 
+//-----------------------------------------------
 //Використовуючи данні з масиву, за допомоги document.write та циклу побудувати структуру по шаблону
 //Масив:
    let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
@@ -74,10 +79,8 @@ while (bees < 20) {
     for (let item of listOfItems) {
         document.write('<li>' + item + '</li>');
     }
-
     document.write('</ul>');
 
-//замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву
 
 //-----------------------------------------------
 
@@ -148,7 +151,7 @@ for (let i = 0; i < products. length; i++) {
         </div>`)
 }
 
-
+//-----------------------------------------------
 // є масив
 // let users = [
 //     {name: 'vasya', age: 31, status: false},
@@ -198,7 +201,6 @@ for (let i = 0; i < users.length ; i++) {
         // document.write(`<ul class="dw"> ${users [i].status}, ${users[i].name}</ul>`)
     }
 }
-
 
 // Користувачі старші за 30 років
     let i = 0;
