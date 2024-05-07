@@ -24,7 +24,7 @@ for (const participant of participants) {
 //     const participant = participants [i];
 //     document.write(`<div>
 //                         <h2>${participant.name}:</h2>
-//                         <li>${participant.username} - ${participant.age}</li>
+//                         <ul>${participant.username} - ${participant.age} age</ul>
 //
 //                    </div>`
 //     )
@@ -32,7 +32,7 @@ for (const participant of participants) {
 //- За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
 
     for (let i = 0; i < 10; i++) {
-        document.write('<div class="block">Цей блок ' + i + '</div>');
+        document.write('<div class="block">Цей блок #' + i + '</div>');
     }
 
 // for (let i = 0; i < 10; i++) {
@@ -58,8 +58,8 @@ while (count < 20) {
 //- За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
 let line = 0;
 while (line < 20) {
-    document.write(`<h1> ${line + 1} 
-                        <li> Кожна бджола віддана своєму завданню та знає, що її праця має велике значення для спільної мети - забезпечення виживання колонії.</li>
+    document.write(`<h1 class="H"> 
+                        <li> Незважаючи на свою змінність, Crazy Rabbit завжди залишається надзвичайно привабливою істотою для тих, хто має сміливість розглядати світ у всій його різноманітності. Його змінний характер — це лише частина того, що робить його таким унікальним і чарівним. (${line + 1})</li>
                 
     </h1>`);
     line++;
@@ -68,7 +68,6 @@ while (line < 20) {
 //Використовуючи данні з масиву, за допомоги document.write та циклу побудувати структуру по шаблону
 //Масив:
    let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
-//ШАБЛОН:
 //ШАБЛОН:
 //  <ul>
 //     <li>ITEM OF ARRAY</li>
@@ -149,7 +148,7 @@ let products = [
 for (let i = 0; i < products. length; i++) {
     const product = products[i]
     document.write(`<div class="product-card">
-            <h3 class="product-title"> ${product.title} ${product.price}</h3>
+            <h3 class="product-title"> ${product.title} Price - ${product.price}</h3>
             <div>
                 <img src="${product.image}" alt="" class="product-image">
 </div>
@@ -196,7 +195,7 @@ for (let i = 0; i<users.length ; i++) {
         continue;
     }
     console.log(users[i].name, users[i].status)
-    document.write(`<h2> ${users[i].name}: ${users [i].status}</h2>`)
+    // document.write(`<h2> ${users[i].name}: ${users [i].status}</h2>`)
 }
 // Користувачі зі статусом false
 for (let i = 0; i<users.length ; i++) {
@@ -204,7 +203,7 @@ for (let i = 0; i<users.length ; i++) {
         continue;
     }
     console.log(users[i].status, users[i].name)
-    document.write(`<ul class="dw"> ${users [i].status}, ${users[i].name}</ul>`)
+    // document.write(`<ul class="dw"> ${users [i].status}, ${users[i].name}</ul>`)
 }
 // Користувачі старші за 30 років
 for (let i = 0; i<users.length ; i++) {
@@ -212,10 +211,10 @@ for (let i = 0; i<users.length ; i++) {
     if (users [i].age <31){
         continue;
     }
-    console.log(user[`name`], user[`age`]);
-    document.write(`<div>
-                           <h2>${users[i].name}, ${users[i].age} років</h2>
-
-</div>`)
+    console.log(user[`name`], user[`age`], 'років');
+//     document.write(`<div>
+//                         <h2>${users[i].name}, ${users[i].age} років</h2>
+//
+// </div>`)
 }
 

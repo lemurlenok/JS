@@ -1,0 +1,39 @@
+.product-card img{
+    width: 250px;
+    padding: 10px;
+    border: 0.5px solid #d6e9c6;
+    border-radius: 10px;
+    background-color: #f0f68a;
+}
+.product-title, .dw{
+    width: 250px;
+    color: #048f8f;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    font-family: "Sedan SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.block{
+    margin: 5px 10px;
+    width: 300px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    background-color: black;
+    font-size: 25px;
+}
+.box2{
+    margin: 15px;
+
+}
+.bees{
+    background-color: #f0f68a;
+}
+
+
+
+
