@@ -20,49 +20,38 @@ for (const participant of participants) {
     )
 }
 
-// for (let i =0; i <participants .length; i++) {
-//     const participant = participants [i];
-//     document.write(`<div>
-//                         <h2>${participant.name}:</h2>
-//                         <ul>${participant.username} - ${participant.age} age</ul>
-//
-//                    </div>`
-//     )
-// }
 //- За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
 
     for (let i = 0; i < 10; i++) {
-        document.write('<div class="block">Цей блок #' + i + '</div>');
+        document.write('<div class="block">Це блок #' + i + '</div>');
     }
 
-// for (let i = 0; i < 10; i++) {
-//     document.write(`<div class="box">
-//                             <div class="box2">Зовнішність Crazy Rabbit може змінюватися в залежності від його настрою: від безтурботної посмішки до дивакуватих виразів обличчя, завжди підкресленої його незбагненною енергією. ${i+1}</div>
-// </div>`);
-// }
+
 //- За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
 
-let count = 0;
-while (count < 20) {
-    document.write(`<div class="bees"> :
- <h1>бджоли ділять на:
-    <li> **Матки**: Матки відповідають за вирощування нових бджіл та управління вуликом. Вони відкладають яйця, які вилуплюються в робочих бджіл та дронів. Матка також вирішує, коли створювати нову матку або розпочинати новий рой.</li>
-    <li>**Робочі бджоли**: Робочі бджоли складають більшість популяції вулика. Вони займаються збиранням нектару та пилку, будівництвом та утриманням вулика, годуванням личинок та маток, а також обороняють вулик від нападів.</li> 
-    <li>**Трутні**: Дрони - це чоловічі бджоли, їх головна функція - розмноження. Вони здатні оплодотворювати маток під час полювання на нові колонії. Дрони не беруть участь у збиранні нектару чи пилку або будівництві вулика, тому їх кількість в колонії може змінюватися в залежності від потреб колонії та сезону.</li>
+let CrazyRabbit = 0;
+while (CrazyRabbit < 20) {
+    document.write(`<div class="CrazyRabbit"> :
+ <h1>Зовнішність Crazy Rabbit може змінюватися в залежності від його настрою: від безтурботної посмішки до дивакуватих виразів обличчя, завжди підкресленої його незбагненною енергією.(${CrazyRabbit + 1})
+   
  </h1>
  </div>`);
-    count++;
+    CrazyRabbit++;
 
 }
 
 //- За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
-let line = 0;
-while (line < 20) {
-    document.write(`<h1 class="H"> 
-                        <li> Незважаючи на свою змінність, Crazy Rabbit завжди залишається надзвичайно привабливою істотою для тих, хто має сміливість розглядати світ у всій його різноманітності. Його змінний характер — це лише частина того, що робить його таким унікальним і чарівним. (${line + 1})</li>
-                
+let bees = 0;
+while (bees < 20) {
+    document.write(`<h1 class="bees"> (${bees + 1})
+                        <ul> бджоли ділять на:
+                             <li> **Матки**: Матки відповідають за вирощування нових бджіл та управління вуликом. Вони відкладають яйця, які вилуплюються в робочих бджіл та дронів. Матка також вирішує, коли створювати нову матку або розпочинати новий рой.</li>
+                             <li>**Робочі бджоли**: Робочі бджоли складають більшість популяції вулика. Вони займаються збиранням нектару та пилку, будівництвом та утриманням вулика, годуванням личинок та маток, а також обороняють вулик від нападів.</li> 
+                             <li>**Трутні**: Дрони - це чоловічі бджоли, їх головна функція - розмноження. Вони здатні оплодотворювати маток під час полювання на нові колонії. Дрони не беруть участь у збиранні нектару чи пилку або будівництві вулика, тому їх кількість в колонії може змінюватися в залежності від потреб колонії та сезону.</li>
+                        </ul>
+            
     </h1>`);
-    line++;
+    bees++;
 }
 
 //Використовуючи данні з масиву, за допомоги document.write та циклу побудувати структуру по шаблону
@@ -78,12 +67,15 @@ while (line < 20) {
 //          ...
 //     -->
 // </ul>
+// замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву
 
-document.write('<ul>');
-for (let i = 0; i < listOfItems.length; i++) {
-    document.write(`<li>'${listOfItems[i]}'</li>`);
-}
-document.write('</ul>');
+    document.write('<ul>');
+
+    for (let item of listOfItems) {
+        document.write('<li>' + item + '</li>');
+    }
+
+    document.write('</ul>');
 
 //замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву
 
@@ -190,31 +182,31 @@ let users = [
      {name: 'max', age: 31, status: true}
 ]
 // Користувачі зі статусом true
-for (let i = 0; i<users.length ; i++) {
-    if (users [i].status === false){
-        continue;
+    let user;
+    for (let i = 0; i < users.length; i++) {
+        let user = users[i];
+        if (users[i].status === true) {
+            console.log(user.name, user.status);
+            // document.write(`<h2> ${users[i].name}: ${users [i].status}</h2>`)
+        }
     }
-    console.log(users[i].name, users[i].status)
-    // document.write(`<h2> ${users[i].name}: ${users [i].status}</h2>`)
-}
+
 // Користувачі зі статусом false
-for (let i = 0; i<users.length ; i++) {
-    if (users [i].status === true){
-        continue;
+for (let i = 0; i < users.length ; i++) {
+    if (users [i].status === false) {
+        console.log(users[i].status, users[i].name)
+        // document.write(`<ul class="dw"> ${users [i].status}, ${users[i].name}</ul>`)
     }
-    console.log(users[i].status, users[i].name)
-    // document.write(`<ul class="dw"> ${users [i].status}, ${users[i].name}</ul>`)
 }
+
+
 // Користувачі старші за 30 років
-for (let i = 0; i<users.length ; i++) {
-    let user = users[i];
-    if (users [i].age <31){
-        continue;
+    let i = 0;
+    while (i < users.length) {
+        if (users[i].age >30) {
+            console.log(users[i].name, users[i].age, 'age');
+        }
+        i++;
+
     }
-    console.log(user[`name`], user[`age`], 'років');
-//     document.write(`<div>
-//                         <h2>${users[i].name}, ${users[i].age} років</h2>
-//
-// </div>`)
-}
 
