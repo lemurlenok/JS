@@ -1,10 +1,35 @@
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
 
+function площаПрямокутника (a, b) {
+    let area = a * b;
+    return area;
+}
+let length = 15;
+let width = 32;
+let rectangleArea = площаПрямокутника(length, width);
+console.log(rectangleArea);
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 
+function площаКола(r) {
+    let area = Math.PI * Math.pow(r, 2);
+    return area;
+}
+let radius = 4;
+let resultat = площаКола(radius);
+console.log(resultat);
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
+function cylinderAareaf (r, h){
+    let бічнаПлоща = 2 * Math.PI * r * h;
+    let totalSurfaceArea =  Math.PI * Math.pow(r, 2);
+    let resultat = бічнаПлоща + 2 * totalSurfaceArea;
+    return resultat;
+}
+let radiuS = 5;
+let height = 8;
+let cylinder = cylinderAareaf (radiuS, height);
+console.log(cylinder);
 
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
@@ -15,7 +40,7 @@ function printArray(array) {
     });
 }
 
-let array = [1, 2, 3, 4, 5];
+let array = ['name', 2, Math.sin, -100500, 'bees',];
 printArray(array);
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
