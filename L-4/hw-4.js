@@ -12,7 +12,8 @@ document.write(`<p> Площа прямокутника = ${ rectangleArea}</p>`
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 
 function areaCircle (r) {
-    return area = Math.PI * Math.pow(r, 2);
+    const PI=3.14;
+    return area =PI * (r ** 2);
 
 }
 let radius = 4;
@@ -21,17 +22,15 @@ console.log(resultat);
 document.write(`<h2>Площа кола з радіусом 4 = ${resultat}</h2>`);
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
-function cylinderAareaf (r, h){
-    let squareSide  = 2 * Math.PI * r * h;
-    let totalSurfaceArea =  Math.PI * Math.pow(r, 2);
-    return  resultat = squareSide + 2 * totalSurfaceArea;
-
+function AreaCylinder (r, h){
+    const PI = 3.14
+    let totalSurfaceArea =  2 * PI * r * (r + h);
+    console.log(totalSurfaceArea);
+    document.write(`<h3>Площа ціліндра = ${totalSurfaceArea}</h3>`)
+    return totalSurfaceArea;
 }
-let radiuS = 5;
-let height = 8;
-let cylinder = cylinderAareaf (radiuS, height);
-console.log(cylinder);
-document.write(`<h3>Площа ціліндра = ${cylinder}</h3>`)
+
+AreaCylinder(5, 8)
 
 
 
@@ -45,28 +44,57 @@ function printArray(array) {
 
 let array = ['name', 2, Math.sin, -100500, 'bees',];
 printArray(array);
-document.write(`<div class="printArray"> <ul><li>${array}</li></ul></div>`);
+document.write(`<div class="printArray"> <ul>
+                                    <li>${array}</li>
+                                    </ul>
+                          </div>`);
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
 
-// function creatParagraph (text){
-//     let paragraph = document.createElement ('p');
-//     paragraph.textContent = text;
-//
-// }
-// creatParagraph ('З цього і складається наше життя. Ми робимо один крок, потім другий. Піднімаємо очі назустріч усмішці чи оскалу довколишнього світу. Думаємо. Діємо. Почуваємо');
-// document.write(paragraph.creatParagraph);
+function creatParagraph (text){
+    document.write(`<p>${text}</p>`)
+
+}
+creatParagraph('З цього і складається наше життя. Ми робимо один крок, потім другий. Піднімаємо очі назустріч усмішці чи оскалу довколишнього світу. Думаємо. Діємо. Почуваємо')
+
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+function createList(txt) {
+    document.write("<ul>");
+    for (let i = 0; i < 3; i++) {
+        document.write("<li>" + txt + "</li>");
+    }
+    document.write("</ul>");
+}
 
-
+let txt = "The journey from the airport to the city began on a wide, modern motorway, lined with shrubs and trees";
+createList(txt);
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 
+function createDocum(words, count) {
+    document.write("<ul>");
+    for (let i = 0; i < count; i++) {
+        document.write("<li>" + words + "</li>");
+    }
+    document.write("</ul>");
+}
 
+
+let words = "Псих, як символ ексцентричності і непередбачуваності, завжди привертає увагу.";
+let count = 3;
+createDocum(words, count);
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 
-
+function buildList(createdArray) {
+   let ul = "<ul>";
+    createdArray.forEach(function(item) {
+        ul += "<li>" + item + "</li>";
+    });
+    ul += "</ul>";
+}
+    let createdArray = [10, "Шкідливий єнот", true, '53', -42];
+createList(createdArray);
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 
@@ -137,3 +165,16 @@ console.log(swap([11,22,33,44],0,1));
 
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
+function exchange(sumUAH, currencyValues, exchangeCurrency) {
+    for (const currencyItem of currencyValues) {
+        if (currencyItem.currency === exchangeCurrency) {
+          moneyExchange = (sumUAH / currencyItem.value).toFixed(2);
+            console.log(`Ви отримаєте: ${moneyExchange} ${currencyItem.currency}`);
+        }
+
+    }
+}
+
+exchange(26000, [{currency:'USD', value:35}, {currency:'EUR', value:41}], 'EUR')
+
+
