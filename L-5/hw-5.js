@@ -1,13 +1,14 @@
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
 
 const areaRectangle = (a, b) => a*b;
-
 console.log(areaRectangle(20, 45));
+
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 
-const PI = 3.14;
+
 const areaCircle = (r, pi) => pi * (r ** 2);
+const PI = 3.14;
 console.log(areaCircle (PI, 6));
 document.write(`Площа кола з радіусом 6` + ' = ' + areaCircle(PI, 6))
 
@@ -15,6 +16,7 @@ document.write(`Площа кола з радіусом 6` + ' = ' + areaCircle(
 const areaCylinder = (r, h, pi) => 2 * pi * r * (r + h);
 const Pi = 3.14;
 console.log(areaCylinder(5, 10, Pi));
+
 
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
@@ -30,128 +32,112 @@ printArrayElements(nweArray);
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
 
-const createParagraph = (text) => {
-    const paragraph = document.createElement('p');
-    paragraph.textContent = text;
-    return paragraph.outerHTML;
-}
+const createParagraph = (text) => {document.write(`<p> ${text}</p>`)};
+    createParagraph ('Думка людей про свої здібності дуже впливає на ці здібності.');
 
-const myParagraph = createParagraph('Думка людей про свої здібності дуже впливає на ці здібності.');
-document.write(myParagraph);
+
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
 const createList = (itemText) => {
-    const listItems = [];
+    document.write('<ul>');
     for (let i = 0; i < 3; i++) {
-        listItems.push(`<li>${itemText}</li>`);
+        document.write(`<li>${itemText}</li>`);
     }
-    return listItems;
-}
-
-const myList = createList('The journey from the airport to the city began on a wide, modern motorway, lined with shrubs and trees');
-document.write('<ul>');
-myList.forEach(item => document.write(item));
-document.write('</ul>');
+    document.write('</ul>');
+   };
+createList ('The journey from the airport to the city began on a wide, modern motorway, lined with shrubs and trees');
 
 
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 
-function createDocum(words, count) {
+const createDocumentItem = (count, words) => {
     document.write("<ul>");
     for (let i = 0; i < count; i++) {
-        document.write("<li>" + words + "</li>");
+        document.write(`<li>${words}</li>`);
     }
     document.write("</ul>");
 }
 
-
-let words = "Псих, як символ ексцентричності і непередбачуваності, завжди привертає увагу.";
-let count = 3;
-createDocum(words, count);
+createDocumentItem(3, 'Зовнішня самовпевненість істоти часто супроводжується великою впевненістю у собі.');
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 
-function buildList(createdArray) {
-    let ul = "<ul>";
-    createdArray.forEach(function(item) {
-        ul += "<li>" + item + "</li>";
-    });
-    ul += "</ul>";
+const buildList = (arr) => {
+   document.write(`<ul>`);
+    for (let i = 0; i < arr.length; i++) {
+        document.write(`<li>${arr[i]}</li>`)
+    }
+    document.write(`</li>`)
 }
-let createdArray = [10, "Шкідливий єнот", true, '53', -42];
-createList(createdArray);
+    buildList ([  42, 'Кава', 'OpenAI', false, 'Загадки Всесвіту', 3.14])
+
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
-
 let people = [
     { id: 1, name: 'Іван', age: 25 },
     { id: 2, name: 'Марія', age: 30 },
     { id: 3, name: 'Петро', age: 35 }
 ];
 
-function printPerson (person){
-    document.write(`<p> ID ${person.id}, Name ${person.name}, Age${person.age}</p> `)
-}
+const printPerson = (person) => {
+    document.write(`<p><b>ID - ${person.id}, Name - ${person.name}, Age - ${person.age}</b></p>`);
+};
 
-for (let i=0; i<printPerson; i++) {
-    printPerson (people[i]);
-}
+people.forEach(printPerson);
+
 // - створити функцію яка повертає найменьше число з масиву
-function valueMinNumber (item){
-    if(item.length ===0){
-        return  "empty"
-    }
-    let MinNumber =item [0];
-    for (i = 1; i<item.length; i++){
-        if (item[i]<MinNumber){
-            MinNumber =item[i];
+const valueMinNumber = (item) => {
+    let minNumber = item[0];
+    for (let i = 1; i < item.length; i++) {
+        if (item[i] < minNumber) {
+            minNumber = item[i];
         }
     }
-    return MinNumber;
-}
-let Numbres = [12, 150, -20, 28, 0, -5, 301, -25];
-let min = valueMinNumber (Numbres);
+    return minNumber;
+};
+
+let numbers = [-2, 56, 248, -246, 0, 46, 4194, -25];
+let min = valueMinNumber(numbers);
 console.log(min);
 
-document.write(`<h3>${min} min</h3>`)
+document.write(`<h3>${min} min</h3>`);
 
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
 
 
-function sum(values) {
+const sum = (values) => {
     let total = 0;
     for (let i = 0; i < values.length; i++) {
         total += values[i];
     }
+    console.log(total);
+    document.write(` ${total}`);
     return total;
-}
+};
 
-console.log(sum([27, 19, -25]));
-
+sum([4917, -4619, -465])
 
 
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 
 
-function swap(arr,index1,index2){
+const  swap = (arr,index1,index2) => {
     let newArr = arr[index1];
     arr[index1] = arr[index2];
     arr[index2] = newArr;
-    return arr;
+    return console.log(arr);
 }
 
-console.log(swap([11,22,33,44],0,1));
+swap([11,22,33,44],0,1);
 
-// let newSwap = swap([11,22,33,44],0,1);
-// document.write(newSwap)
 
 // -------------------------------------------------
 
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
-function exchange(sumUAH, currencyValues, exchangeCurrency) {
+const exchange = (sumUAH, currencyValues, exchangeCurrency) =>{
     for (const currencyItem of currencyValues) {
         if (currencyItem.currency === exchangeCurrency) {
             moneyExchange = (sumUAH / currencyItem.value).toFixed(2);
@@ -161,6 +147,6 @@ function exchange(sumUAH, currencyValues, exchangeCurrency) {
     }
 }
 
-exchange(26000, [{currency:'USD', value:35}, {currency:'EUR', value:41}], 'EUR')
+exchange(12000, [{currency:'USD', value:39}, {currency:'EUR', value:41.15}], 'USD')
 
 
