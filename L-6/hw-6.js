@@ -110,13 +110,14 @@ let coursesAndDurationArray = [
 
 // -- відсортувати його за спаданням за monthDuration
 coursesAndDurationArray.sort((a, b) => b.monthDuration - a.monthDuration);
+console.log(coursesAndDurationArray);
 
 //курси з тривалістю більше 5 місяців
 let filteredCourses = coursesAndDurationArray.filter(course => course.monthDuration > 5);
+console.log(filteredCourses);
 
 //перетворення кожного елементу на наступний тип {id,title,monthDuration}
-let transformedCourses = filteredCourses.map((course, index) => ({id: index + 1, title: course.title, monthDuration: course.monthDuration}));
-
+let transformedCourses =coursesAndDurationArray.map((course, index) => ({id: index + 1, title: course.title, monthDuration: course.monthDuration}));
 console.log(transformedCourses);
 
 // =========================
@@ -138,8 +139,10 @@ console.log(transformedCourses);
 const suits = ['spade', 'diamond', 'heart', 'clubs'];
 const values = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
 
+
 let deck = suits.flatMap(suit =>
     values.map(value => ({cardSuit: suit, value,color: (suit === 'diamond' || suit === 'heart') ? 'red' : 'black'})));
+console.log(deck);
 
 // Знайти піковий туз
 let spadeAce = deck.find(card => card.cardSuit === 'spade' && card.value === 'ace');
@@ -180,9 +183,9 @@ let packedCards = deck.reduce((accumulator, currentCard) => {
    accumulator[currentCard.cardSuit].push(currentCard);
    return accumulator;
 }, {
-   spades: [],
-   diamonds: [],
-   hearts: [],
+   spade: [],
+   diamond: [],
+   heart: [],
    clubs: []
 });
 console.log(packedCards);
