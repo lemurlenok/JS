@@ -3,14 +3,14 @@
 let strings = ['hello world', 'lorem ipsum', 'javascript is cool'];
 
 for (let i = 0; i < strings.length; i++) {
-   console.log("Довжина стрінга '" + strings[i] + "': " + strings[i].length);
+   console.log("Довжина стрінги '" + strings[i] + " : " + strings[i].length);
 }
 
 
 // - Перевести до великого регістру наступні стрінгові значення
 // 'hello world', 'lorem ipsum', 'javascript is cool'
 
-let strIngs = ['hello world', 'lorem ipsum', 'javascript is cool'];
+const strIngs = ['hello world', 'lorem ipsum', 'javascript is cool'];
 
 for (let i = 0; i < strIngs.length; i++) {
    strIngs[i] = strIngs[i].toUpperCase();
@@ -158,8 +158,8 @@ let diamonds = deck.filter(card => card.cardSuit === 'diamond');
 console.log("Всі буби:", diamonds);
 
 // Всі трефи від 9 та більше
-let clubsFrom9 = deck.filter(card => card.cardSuit === 'clubs' && parseInt(card.value) >= 9);
-console.log("Всі трефи від 9 та більше:", clubsFrom9);
+let FromClubs9 = deck.filter(card => card.cardSuit === 'clubs' && parseInt(card.value) >= 9);
+console.log("Всі трефи від 9 та більше:", FromClubs9);
 
 
 
