@@ -59,10 +59,8 @@ console.log(stringNumbers);
 function sortNums(nums, direction) {
 
    if (direction === 'ascending') {
-
       nums.sort((a, b) => a - b);
    } else if (direction === 'descending') {
-
       nums.sort((a, b) => b - a);
    } else {
       return nums;
