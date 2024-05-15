@@ -43,8 +43,7 @@ console.log(string);
 // let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
 
 function stringToarray(strA) {
-   // Розділяємо рядок на масив слів за допомогою методу split()
-   return strA.split(" ");
+     return strA.split(" ");
 }
 
 let strA = 'Ревуть воли як ясла повні';
@@ -87,25 +86,13 @@ console.log(sortNums(nums, 'descending'));
 
 // ==========================
 // - є масив
-// let coursesAndDurationArray = [
-//     {title: 'JavaScript Complex', monthDuration: 5},
-//     {title: 'Java Complex', monthDuration: 6},
-//     {title: 'Python Complex', monthDuration: 6},
-//     {title: 'QA Complex', monthDuration: 4},
-//     {title: 'FullStack', monthDuration: 7},
-//     {title: 'Frontend', monthDuration: 4}
-// ];
-// -- відсортувати його за спаданням за monthDuration
-// -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
-// -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
-
 let coursesAndDurationArray = [
-   {title: 'JavaScript Complex', monthDuration: 5},
-   {title: 'Java Complex', monthDuration: 6},
-   {title: 'Python Complex', monthDuration: 6},
-   {title: 'QA Complex', monthDuration: 4},
-   {title: 'FullStack', monthDuration: 7},
-   {title: 'Frontend', monthDuration: 4}
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
 ];
 
 // -- відсортувати його за спаданням за monthDuration
@@ -141,11 +128,11 @@ const values = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
 
 
 let deck = suits.flatMap(suit =>
-    values.map(value => ({cardSuit: suit, value,color: (suit === 'diamond' || suit === 'heart') ? 'red' : 'black'})));
+    values.map(value => ({SuitCard: suit, value,color: (suit === 'diamond' || suit === 'heart') ? 'red' : 'black'})));
 console.log(deck);
 
 // Знайти піковий туз
-let spadeAce = deck.find(card => card.cardSuit === 'spade' && card.value === 'ace');
+let spadeAce = deck.find(card => card.SuitCard === 'spade' && card.value === 'ace');
 console.log("Піковий туз:", spadeAce);
 
 // Всі шістки
@@ -157,12 +144,12 @@ let redCards = deck.filter(card => card.color === 'red');
 console.log("Всі червоні карти:", redCards);
 
 // Всі буби
-let diamonds = deck.filter(card => card.cardSuit === 'diamond');
-console.log("Всі буби:", diamonds);
+let diamondsAll = deck.filter(card => card.SuitCard === 'diamond');
+console.log("Всі буби:", diamondsAll);
 
 // Всі трефи від 9 та більше
-let FromClubs9 = deck.filter(card => card.cardSuit === 'clubs' && parseInt(card.value) >= 9);
-console.log("Всі трефи від 9 та більше:", FromClubs9);
+let FromClubs = deck.filter(card => card.SuitCard === 'clubs' && parseInt(card.value) >= 9);
+console.log("Всі трефи від 9:", FromClubs);
 
 
 
@@ -176,11 +163,11 @@ console.log("Всі трефи від 9 та більше:", FromClubs9);
 
 
 // Упакувати карти по "мастях" в об'єкт
-let packedCards = deck.reduce((accumulator, currentCard) => {
-   if (!accumulator[currentCard.cardSuit]) {
-      accumulator[currentCard.cardSuit] = [];
+let PackTheСards  = deck.reduce((accumulator, currentCard) => {
+   if (!accumulator[currentCard.SuitCard]) {
+      accumulator[currentCard.SuitCard] = [];
    }
-   accumulator[currentCard.cardSuit].push(currentCard);
+   accumulator[currentCard.SuitCard].push(currentCard);
    return accumulator;
 }, {
    spade: [],
@@ -188,7 +175,7 @@ let packedCards = deck.reduce((accumulator, currentCard) => {
    heart: [],
    clubs: []
 });
-console.log(packedCards);
+console.log(PackTheСards);
 
 
 //     взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
@@ -270,6 +257,6 @@ console.log(coursesWithSass);
 
 // --написати пошук всіх об'єктів, в який в modules є docker
 
-let coursesWithDocker = coursesArray.filter(course => course.modules.includes('docker'));
+let Docker = coursesArray.filter(course => course.modules.includes('docker'));
 
-console.log(coursesWithDocker);
+console.log(Docker);
