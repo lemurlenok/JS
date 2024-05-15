@@ -140,16 +140,19 @@ let sixes = deck.filter(card => card.value === '6');
 console.log("Всі шістки:", sixes);
 
 // Всі червоні карти
-let redCards = deck.filter(card => card.color === 'red');
+const redCards = deck.filter(card => card.color === 'red');
 console.log("Всі червоні карти:", redCards);
 
 // Всі буби
-let diamondsAll = deck.filter(card => card.SuitCard === 'diamond');
+const diamondsAll = deck.filter(card => card.SuitCard === 'diamond');
 console.log("Всі буби:", diamondsAll);
 
 // Всі трефи від 9 та більше
-let FromClubs = deck.filter(card => card.SuitCard === 'clubs' && parseInt(card.value) >= 9);
-console.log("Всі трефи від 9:", FromClubs);
+// const AllClubs = deck.filter(card => card.SuitCard === 'clubs' && parseInt(card.value) >= 9);
+// console.log("Всі трефи від 9:",AllClubs);
+
+const ClubsAll = deck.filter(card => card.SuitCard === 'clubs' && ['9', '10', 'jack', 'queen', 'king', 'ace'].includes(card.value));
+console.log("Всі трефи від 9:",ClubsAll);
 
 
 
@@ -249,11 +252,13 @@ let coursesArray = [
       modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
    }
 ];
+console.log(coursesArray);
+
 // --написати пошук всіх об'єктів, в який в modules є sass
 
-let coursesWithSass = coursesArray.filter(course => course.modules.includes('sass'));
+let Sass = coursesArray.filter(course => course.modules.includes('sass'));
 
-console.log(coursesWithSass);
+console.log(Sass);
 
 // --написати пошук всіх об'єктів, в який в modules є docker
 
