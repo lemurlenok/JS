@@ -13,33 +13,59 @@ function User (id, name, surname , email, phone) {
 const Users= [];
 
 
-new User ('1', 'Vanya', '@Crezy_bees', 'Crezy_bees@gmail.com','+380675261456');
-new User('2', 'Lana', '@SnuSmumric', 'Lana.S@gmail.com','+380950658924');
-new User ('3', 'Alex', '@Alex27$', 'my.litle.ponny@gmail.com','+380502568472');
-new User ('4', 'Petya', '@PinkRabbit', 'PinkRabbit@ukr.net','+380662581592');
-new User ('5', 'Vasya', '@Vasya.M', 'mongoose.vasya@gmail.com','+380985261456');
-new User ('6', 'Andrew', '@Saburo_Sakai', 'Saburo_Sakai@ukr.net','+380990858324');
-new User ('7', 'Valya', '@interior+', 'interior_plus@i.ua','+380967425867');
-new User ('8', 'Nikita', '@Nikitos', 'Nikita_ne_@gmail.com','+380632511511');
-new User ('9', 'Oleg', '@Pegas', 'Pgas@gmail.com','+380677777777');
-new User ('10', 'Paskal', '@jolly_gnome', 'jolly_gnome@gmail.com','+380677952244');
+Users.push(new User ('1', 'Vanya', '@Crezy_bees', 'Crezy_bees@gmail.com','+380675261456'));
+Users.push (new User('2', 'Lana', '@SnuSmumric', 'Lana.S@gmail.com','+380950658924'));
+Users.push (new User ('3', 'Alex', '@Alex27$', 'my.litle.ponny@gmail.com','+380502568472'));
+Users.push (new User ('4', 'Petya', '@PinkRabbit', 'PinkRabbit@ukr.net','+380662581592'));
+Users.push (new User ('5', 'Vasya', '@Vasya.M', 'mongoose.vasya@gmail.com','+380985261456'));
+Users.push (new User ('6', 'Andrew', '@Saburo_Sakai', 'Saburo_Sakai@ukr.net','+380990858324'));
+Users.push (new User ('7', 'Valya', '@interior+', 'interior_plus@i.ua','+380967425867'));
+Users.push (new User ('8', 'Nikita', '@Nikitos', 'Nikita_ne_@gmail.com','+380632511511'));
+Users.push (new User ('9', 'Oleg', '@Pegas', 'Pgas@gmail.com','+380677777777'));
+Users.push (new User ('10', 'Paskal', '@jolly_gnome', 'jolly_gnome@gmail.com','+380677952244'));
 
 // // - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
-const filterUsers = Users.filter(user => parseInt(user.id) % 2 === 0);
-console.log(filterUsers);
-//
+const UsersNew = Users.filter(user => parseInt(user.id) % 2 === 0);
+console.log(UsersNew);
 
-
-
-//even id
 // - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
 
-//
+
+Users.sort((a,b)  => parseInt (a.id) - parseInt (b.id));
+console.log(Users);
+
 // - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
 // створити пустий масив, наповнити його 10 об'єктами Client
+
+class Client {
+    constructor(id, name, surname , email, phone, order) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+        this.order = order;
+    }
+}
+const Clients  = [];
+Clients.push(new Client ('1', 'Vanya', '@Crezy_bees', "Crezy_bees@gmail.com",'+380675261456',['milk', 'egg']));
+Clients.push (new Client('2', 'Lana', '@SnuSmumric', 'Lana.S@gmail.com','+380950658924', ['tomato', 'apple', 'banana']));
+Clients.push (new Client ('3', 'Alex', '@Alex27$', 'my.litle.ponny@gmail.com','+380502568472', ['Coconut', 'Blackberry', 'Lemon', 'Mango']));
+Clients.push (new Client ('4', 'Petya', '@PinkRabbit', 'PinkRabbit@ukr.net','+380662581592', ['Grapes', 'Pineapple', 'Watermelon']));
+Clients.push (new Client ('5', 'Vasya', '@Vasya.M', 'mongoose.vasya@gmail.com','+380985261456', ['Orange', 'Grapes', 'Blueberries']));
+Clients.push (new Client ('6', 'Andrew', '@Saburo_Sakai', 'Saburo_Sakai@ukr.net','+380990858324', ['Pear', 'Apricot', 'Avocado']));
+Clients.push (new Client ('7', 'Valya', '@interior+', 'interior_plus@i.ua','+380967425867', ['Papaya', 'Pineapple']));
+Clients.push (new Client ('8', 'Nikita', '@Nikitos', 'Nikita_ne_@gmail.com','+380632511511', ['Blueberries', 'Lemon', 'egg']));
+Clients.push (new Client ('9', 'Oleg', '@Pegas', 'Pgas@gmail.com','+380677777777', ['Banana', 'Apple', 'Pineapple']));
+Clients.push (new Client ('10', 'Paskal', '@jolly_gnome', 'jolly_gnome@gmail.com','+380677952244', ['Mango', 'Kiwi', 'Raspberry', 'Cherry']));
+
+console.log(Clients)
 // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
-//
-//
+
+Clients.sort((a, b) => a.order.length - b.order.length);
+console.log(Clients);
+
+
 // - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
 // -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
 // -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
