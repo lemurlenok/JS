@@ -12,20 +12,15 @@ for (let i = 0; i < strings.length; i++) {
 
 const strIngs = ['hello world', 'lorem ipsum', 'javascript is cool'];
 
-for (let i = 0; i < strIngs.length; i++) {
-   strIngs[i] = strIngs[i].toUpperCase();
-}
-
-console.log(strIngs);
+const UpStrings = strings.map(str =>str.toUpperCase());
+console.log(UpStrings);
 
 // - Перевести до нижнього регістру настипні стрінгові значення
 // 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
 let str = ['HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'];
 
-for (let i = 0; i < str.length; i++) {
-   str[i] = str[i].toLowerCase();
-}
-console.log(str);
+const lowerStrings = strings.map(str => str.toLowerCase());
+console.log(lowerStrings);
 
 // let strings = ['HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'];
 // let lowerCaseStrings = strings.map(str => str.toLowerCase());
@@ -149,16 +144,16 @@ console.log("Всі буби:", diamondsAll);
 
 // Всі трефи від 9 та більше
 
-// const  ClubsAll9 = deck.filter(card => {
+// const  Clubs9 = deck.filter(card => {
 //    if (card.SuitCard === 'clubs') {
-//       const cardValueIndex = values.indexOf(card.value);
-//       const 9Index = values.indexOf('9');
-//       return cardValueIndex >= 9Index;
+//       const cardIndex = values.indexOf(card.value);
+//       const C9Index = values.indexOf('9');
+//       return cardIndex >= C9Index;
 //    } else {
 //       return false;
 //    }
 // });
-// console.log(ClubsAll9);
+// console.log(Clubs9);
 
 const ClubsAll = deck.filter(card => card.SuitCard === 'clubs' && values.indexOf(card.value) >= values.indexOf('9'));
 console.log("Всі трефи від 9:",ClubsAll);
