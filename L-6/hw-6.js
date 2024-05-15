@@ -1,10 +1,8 @@
 // - Знайти та вивести довижину настипних стрінгових значень
 // 'hello world', 'lorem ipsum', 'javascript is cool'
-let strings = ['hello world', 'lorem ipsum', 'javascript is cool'];
-
-for (let i = 0; i < strings.length; i++) {
-   console.log("Довжина стрінги '" + strings[i] + " : " + strings[i].length);
-}
+const strings = ['hello world', 'lorem ipsum', 'javascript is cool'];
+const lengths = strings.map(str => `Довжина стрінги: ${str}, ${str.length}`);
+console.log(lengths);
 
 
 // - Перевести до великого регістру наступні стрінгові значення
