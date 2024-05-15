@@ -1,5 +1,6 @@
 // - Знайти та вивести довижину настипних стрінгових значень
 // 'hello world', 'lorem ipsum', 'javascript is cool'
+
 const strings = ['hello world', 'lorem ipsum', 'javascript is cool'];
 const lengths = strings.map(str => `Довжина стрінги: ${str}, ${str.length}`);
 console.log(lengths);
@@ -20,9 +21,7 @@ let str = ['HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'];
 const lowerStrings = strings.map(str => str.toLowerCase());
 console.log(lowerStrings);
 
-// let strings = ['HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'];
-// let lowerCaseStrings = strings.map(str => str.toLowerCase());
-// console.log(lowerCaseStrings);
+
 
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 
