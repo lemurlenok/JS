@@ -148,10 +148,19 @@ const diamondsAll = deck.filter(card => card.SuitCard === 'diamond');
 console.log("Всі буби:", diamondsAll);
 
 // Всі трефи від 9 та більше
-// const AllClubs = deck.filter(card => card.SuitCard === 'clubs' && parseInt(card.value) >= 9);
-// console.log("Всі трефи від 9:",AllClubs);
 
-const ClubsAll = deck.filter(card => card.SuitCard === 'clubs' && ['9', '10', 'jack', 'queen', 'king', 'ace'].includes(card.value));
+// const  ClubsAll9 = deck.filter(card => {
+//    if (card.SuitCard === 'clubs') {
+//       const cardValueIndex = values.indexOf(card.value);
+//       const 9Index = values.indexOf('9');
+//       return cardValueIndex >= 9Index;
+//    } else {
+//       return false;
+//    }
+// });
+// console.log(ClubsAll9);
+
+const ClubsAll = deck.filter(card => card.SuitCard === 'clubs' && values.indexOf(card.value) >= values.indexOf('9'));
 console.log("Всі трефи від 9:",ClubsAll);
 
 
