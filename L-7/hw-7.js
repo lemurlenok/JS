@@ -180,16 +180,6 @@ class Cinderella {
         this.shoeSize = shoeSize;
     }
 }
-
-class Prince {
-    constructor(name, age, foundShoe) {
-        this.name = name;
-        this.age = age;
-        this.foundShoe = foundShoe;
-    }
-}
-
-
 const cinderellas = [
     new Cinderella('Cinderella Manyunya (1)', 16, 34),
     new Cinderella('Cinderella Flipper (2)', 22, 46),
@@ -203,7 +193,13 @@ const cinderellas = [
     new Cinderella('Cinderella is an old woman', 93, 36)
 ];
 console.log(cinderellas);
-
+class Prince {
+    constructor(name, age, foundShoe) {
+        this.name = name;
+        this.age = age;
+        this.foundShoe = foundShoe;
+    }
+}
 
 const prince = new Prince('Prince Fool', 21, 36);
 console.log(prince);
