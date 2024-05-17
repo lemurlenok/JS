@@ -200,7 +200,7 @@ const cinderellas = [
     new Cinderella('Cinderella 7', 22, 39),
     new Cinderella('Cinderella 8', 28, 37),
     new Cinderella('Cinderella 9', 31, 40),
-    new Cinderella('Cinderella 10', 93, 36)
+    new Cinderella('Cinderella is an old woman', 93, 36)
 ];
 console.log(cinderellas);
 
@@ -256,7 +256,7 @@ Array.prototype.myFilter = function(callback) {
 
 const arr2 = ['apple', 'banana', 'orange', 'kiwi', 'grape'];
 const filteredArr = arr2.myFilter(fruit => fruit.length > 5);
-console.log("Фрукти з назвою довше за 5 символів:", filteredArr);
+console.log(filteredArr);
 
 
 Array.prototype.myMap = function(callback) {
