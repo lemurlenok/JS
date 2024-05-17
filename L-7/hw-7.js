@@ -21,7 +21,7 @@ Users.push (new User ('5', 'Vasya', '@Vasya.M', 'mongoose.vasya@gmail.com','+380
 Users.push (new User ('6', 'Andrew', '@Saburo_Sakai', 'Saburo_Sakai@ukr.net','+380990858324'));
 Users.push (new User ('7', 'Valya', '@interior+', 'interior_plus@i.ua','+380967425867'));
 Users.push (new User ('8', 'Nikita', '@Nikitos', 'Nikita_ne_@gmail.com','+380632511511'));
-Users.push (new User ('9', 'Oleg', '@Pegas', 'Pgas@gmail.com','+380677777777'));
+Users.push (new User ('9', 'Oleg', '@Pegas', 'Pegas@gmail.com','+380677777777'));
 Users.push (new User ('10', 'Paskal', '@jolly_gnome', 'jolly_gnome@gmail.com','+380677952244'));
 
 // // - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
