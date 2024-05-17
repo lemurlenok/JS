@@ -85,9 +85,9 @@ function Car(model, manufacturer, year, maxSpeed, engineVolume) {
     };
 
     this.info = function() {
-        for (let key in this) {
-            if (typeof this[key] !== 'function') {
-                console.log(`${key} - ${this[key]}`);
+        for (let model in this) {
+            if (typeof this[model] !== 'function') {
+                console.log(`${model} - ${this[model]}`);
             }
         }
     };
@@ -138,9 +138,9 @@ class CarTwo {
     }
 
     info() {
-        for (let key in this) {
-            if (typeof this[key] !== 'function') {
-                console.log(`${key} - ${this[key]}`);
+        for (let x in this) {
+            if (typeof this[x] === 'function') {
+                console.log(`${x} - ${this[x]}`);
             }
         }
     }
@@ -191,15 +191,15 @@ class Prince {
 
 
 const cinderellas = [
-    new Cinderella('Cinderella 1', 20, 34),
-    new Cinderella('Cinderella 2', 22, 35),
-    new Cinderella('Cinderella 3', 18, 38),
-    new Cinderella('Cinderella 4', 20, 37),
-    new Cinderella('Cinderella 5', 21, 38),
-    new Cinderella('Cinderella 6', 25, 39),
-    new Cinderella('Cinderella 7', 22, 39),
-    new Cinderella('Cinderella 8', 28, 37),
-    new Cinderella('Cinderella 9', 31, 40),
+    new Cinderella('Cinderella Manyunya (1)', 16, 34),
+    new Cinderella('Cinderella Flipper (2)', 22, 46),
+    new Cinderella('Cinderella Fluff (3)', 20, 38),
+    new Cinderella('Cinderella of the foolish laugh (4)', 20, 37),
+    new Cinderella('Cinderella Crooked-Eyed (5)', 21, 38),
+    new Cinderella('Cinderella Ugly (6)', 25, 39),
+    new Cinderella('Cinderella Belle (7)', 22, 39),
+    new Cinderella('Cinderella is the best wife (8)', 18, 37),
+    new Cinderella('Cinderella is a glutton (9)', 31, 40),
     new Cinderella('Cinderella is an old woman', 93, 36)
 ];
 console.log(cinderellas);
@@ -226,9 +226,9 @@ if (foundCinderella) {
 const foundCinderella2 = cinderellas.find(cinderella => cinderella.shoeSize === prince.foundShoe);
 
 if (foundCinderella2) {
-    console.log(`Принц ${prince.name} знайшов своє щастя: ${foundCinderella2.name}`);
+    console.log(`Принц ${prince.name} знайшов своє не довге щастя: ${foundCinderella2.name}`);
 } else {
-    console.log(`Принц ${prince.name} не пожалкує.`);
+    console.log(`Принц ${prince.name} втрати не відчує.`);
 }
 
 // Через Array.prototype. створити власний foreach, filter, map
