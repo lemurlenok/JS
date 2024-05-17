@@ -215,7 +215,7 @@ for (let i = 0; i < cinderellas.length; i++) {
 if (foundCinderella) {
     console.log(`Принц ${prince.name} знайшов свою "молоду" наречену" : ${foundCinderella.name}`);
 } else {
-    console.log(`У ${prince.name} не буде сім'ї.`);
+    console.log(`${prince.name} не дуже й хтів.`);
 }
 
 
