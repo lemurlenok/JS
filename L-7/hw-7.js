@@ -12,7 +12,6 @@ function User (id, name, surname , email, phone) {
 }
 const Users= [];
 
-
 Users.push(new User ('1', 'Vanya', '@Crezy_bees', 'Crezy_bees@gmail.com','+380675261456'));
 Users.push (new User('2', 'Lana', '@SnuSmumric', 'Lana.S@gmail.com','+380950658924'));
 Users.push (new User ('3', 'Alex', '@Alex27$', 'my.litle.ponny@gmail.com','+380502568472'));
@@ -35,6 +34,7 @@ console.log(Users);
 
 // - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
 // створити пустий масив, наповнити його 10 об'єктами Client
+
 
 class Client {
     constructor(id, name, surname, email, phone, order) {
@@ -81,7 +81,7 @@ function Car(model, manufacturer, year, maxSpeed, engineVolume) {
     this.engineVolume = engineVolume;
 
     this.drive = function() {
-        console.log(`Їдемо зі швидкістю ${this.maxSpeed} км/год`);
+        console.log`Їдемо зі швидкістю ${this.maxSpeed} км/год`;
     };
 
     this.info = function() {
@@ -106,7 +106,7 @@ function Car(model, manufacturer, year, maxSpeed, engineVolume) {
 }
 
 // Приклад використання:
-const myCar = new Car('GT 4-door Coupe', 'Mercedes', 2022, 310, '3L');
+const myCar = new Car('Mercedes', ' Germany', 2022, 310, '3L');
 myCar.drive();
 myCar.info();
 myCar.increaseMaxSpeed(20);
@@ -158,7 +158,7 @@ class CarTwo {
     }
 }
 
-const myCarTwo = new CarTwo('RAM', 'Dodge', 2023, 220, '3L');
+const myCarTwo = new CarTwo('Dodge', 'Canada', 2023, 220, '3L');
 myCarTwo.drive();
 myCarTwo.info();
 myCarTwo.increaseMaxSpeed(20);
