@@ -270,3 +270,8 @@ const arr3 = [15, 3, 85, 14, 69];
 const multipliedArr = arr3.myMap(num => num * 3);
 console.log(arr3);
 console.log(multipliedArr);
+
+
+
+
+
