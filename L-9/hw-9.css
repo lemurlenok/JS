@@ -1,0 +1,23 @@
+.block {
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 18px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.alpha {
+    opacity: 0.5;
+}
+
+.beta {
+    border: 2px solid #999;
+}
+
+.wrap {
+    width: 300px;
+}
+
+.collapse {
+    display: inline-block;
+}
