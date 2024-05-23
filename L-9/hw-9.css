@@ -1,4 +1,4 @@
-.block, .course-block, .familyMember  {
+.block, .course-block, .familyMember, .title {
     background-color: #f0f0f0;
     color: #333;
     font-size: 18px;
@@ -35,6 +35,42 @@
     float: left;
     margin-right: 20px;
 }
-.familyMember{
+.familyMember, .parent-container{
     width: 700px;
+}
+
+.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.course {
+    width: 100%;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.duration {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modules {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.modules div {
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
 }
