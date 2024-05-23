@@ -55,9 +55,10 @@ coursesAndDurationArray.forEach(course => {
     coursesContainer.appendChild(courseBlock);
 });
 });
+
 // =========================
-//
 //     - Є масив
+
 let coursesAndDurationArray = [
     {title: 'JavaScript Complex', monthDuration: 5},
     {title: 'Java Complex', monthDuration: 6},
@@ -268,12 +269,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const monthDurationBlock = document.createElement('div');
         monthDurationBlock.classList.add('month-duration');
-        monthDurationBlock.textContent = `Duration (months): ${course.monthDuration}`;
+        monthDurationBlock.textContent = `monthDuration: ${course.monthDuration}`;
         durationBlock.appendChild(monthDurationBlock);
 
         const hourDurationBlock = document.createElement('div');
         hourDurationBlock.classList.add('hour-duration');
-        hourDurationBlock.textContent = `Duration (hours): ${course.hourDuration}`;
+        hourDurationBlock.textContent = `hourDuration: ${course.hourDuration}`;
         durationBlock.appendChild(hourDurationBlock);
 
         courseBlock.appendChild(durationBlock);

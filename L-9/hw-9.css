@@ -1,4 +1,4 @@
-.block, .course-block, .familyMember, .title {
+.block, .course-block, .familyMember, .title, .month-duration, .hour-duration, .modules div {
     background-color: #f0f0f0;
     color: #333;
     font-size: 18px;
@@ -61,7 +61,13 @@
     display: flex;
     justify-content: space-between;
 }
+.month-duration{
+    width: 35%;
+}
 
+.hour-duration{
+    width: 65%;
+}
 .modules {
     text-align: center;
     display: flex;
