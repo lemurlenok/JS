@@ -7,7 +7,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     let originalBlock = document.querySelector('.block');
     let clonedBlock = originalBlock.cloneNode(true);
-    document.body.appendChild(clonedBlock);
+    // document.body.appendChild(clonedBlock);
+    document.body.insertBefore(clonedBlock, document.body.firstChild)
 });
 
 //
@@ -25,9 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
         navigMenu.appendChild(listItem);
     });
 });
-
-
-
 
 // - Є масив
 document.addEventListener("DOMContentLoaded", function() {
@@ -102,9 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Проітерувати його, створиши для кожного об'єкту  масиву <div class='member'> та наповнити його данними з об'єкту.
 //     Якщо людською мовою: під кожного члена родини зробити блок та наповнити його інформацією з цього об'єкту
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const familyContainer = document.getElementById('family');
-//     if (familyContainer) {
+
         let simpsons = [
             {
                 name: 'Bart',
@@ -142,23 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 photo: 'https://upload.wikimedia.org/wikipedia/ru/9/9d/Maggie_Simpson.png'
             },
         ];
-
-
-    //     simpsons.forEach(familyMember => {
-    //         const familyMemberDiv = document.createElement('div');
-    //         familyMemberDiv.classList.add('familyMember');
-    //
-    //         familyMemberDiv.innerHTML = `
-    //     <img src="${familyMember.photo}" alt="${familyMember.name}">
-    //     <h2>${familyMember.name} ${familyMember.surname}</h2>
-    //     <p><strong>Age:</strong> ${familyMember.age}</p>
-    //     <p><strong>Info:</strong> ${familyMember.info}</p>`;
-    //
-    //         familyContainer.appendChild(familyMemberDiv);
-    //     });
-    // };
-    // });
-
 
 document.addEventListener('DOMContentLoaded', function() {
     let familyListDiv = document.getElementById('family');
