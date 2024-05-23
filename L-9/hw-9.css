@@ -1,9 +1,11 @@
-.block {
+.block, .course-block, .familyMember  {
     background-color: #f0f0f0;
     color: #333;
     font-size: 18px;
     padding: 20px;
     margin: 10px;
+    color: #07076c;
+    border-radius: 5px;
 }
 
 .alpha {
@@ -14,10 +16,25 @@
     border: 2px solid #999;
 }
 
-.wrap {
+.wrap, .course-block {
     width: 300px;
 }
 
 .collapse {
     display: inline-block;
+}
+
+.member {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.member img {
+    width: 100px;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+}
+.familyMember{
+    width: 700px;
 }
