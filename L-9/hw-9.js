@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
             parentElement.appendChild(itemDiv);
         }
     } else {
-        console.error("Parent element 'container' not found.");
+        console.error("----------error---------");
     }
 });
 //
@@ -272,3 +272,5 @@ document.addEventListener('DOMContentLoaded', function() {
         parentContainer.appendChild(courseBlock);
     });
 });
+
+
