@@ -67,31 +67,26 @@ let coursesAndDurationArray = [
 ];
 // За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,  в якому буде <h1 class='heading'>  з title  елементу, та <p class='description'> з monthDuration елементу.
 //     Завдання робити через цикли.
-document.addEventListener('DOMContentLoaded', function() {
-    const parentElement = document.getElementById('container');
 
-    if (parentElement) {
+    let container = document.getElementById('container');
+
         for (let i = 0; i < coursesAndDurationArray.length; i++) {
-            const itemDiv = document.createElement('div');
+            let itemDiv = document.createElement('div');
             itemDiv.classList.add('item');
 
-            const heading = document.createElement('h1');
+            let heading = document.createElement('h1');
             heading.classList.add('heading');
             heading.textContent = coursesAndDurationArray[i].title;
 
-            const description = document.createElement('p');
+           let description = document.createElement('p');
             description.classList.add('description');
             description.textContent = `${coursesAndDurationArray[i].monthDuration} months`;
 
             itemDiv.appendChild(heading);
             itemDiv.appendChild(description);
 
-            parentElement.appendChild(itemDiv);
+            container.appendChild(itemDiv);
         }
-    } else {
-        console.error("----------error---------");
-    }
-});
 //
 //
 // ==========================
@@ -139,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         ];
 
-document.addEventListener('DOMContentLoaded', function() {
+
     let familyListDiv = document.getElementById('family');
     for (const family of simpsons) {
         let div = document.createElement('div');
@@ -152,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         familyListDiv.appendChild(div);
     }
-});
+
 
 // =========================
 //     Цикл в циклі
@@ -231,38 +226,38 @@ let coursesArray = [
 // Приклад структири знаходиться у файлі example.png який лежить в папці з поточним фйлом
 // ------------------
 
-document.addEventListener('DOMContentLoaded', function() {
-    const parentContainer = document.getElementById('parent-container');
+
+   let parentContainer = document.getElementById('parent-container');
 
     coursesArray.forEach(course => {
-        const courseBlock = document.createElement('div');
+        let courseBlock = document.createElement('div');
         courseBlock.classList.add('course');
 
-        const titleBlock = document.createElement('div');
+        let titleBlock = document.createElement('div');
         titleBlock.classList.add('title');
         titleBlock.textContent = course.title;
         courseBlock.appendChild(titleBlock);
 
-        const durationBlock = document.createElement('div');
+        let durationBlock = document.createElement('div');
         durationBlock.classList.add('duration');
 
-        const monthDurationBlock = document.createElement('div');
+        let monthDurationBlock = document.createElement('div');
         monthDurationBlock.classList.add('month-duration');
         monthDurationBlock.textContent = `monthDuration: ${course.monthDuration}`;
         durationBlock.appendChild(monthDurationBlock);
 
-        const hourDurationBlock = document.createElement('div');
+        let hourDurationBlock = document.createElement('div');
         hourDurationBlock.classList.add('hour-duration');
         hourDurationBlock.textContent = `hourDuration: ${course.hourDuration}`;
         durationBlock.appendChild(hourDurationBlock);
 
         courseBlock.appendChild(durationBlock);
 
-        const modulesBlock = document.createElement('div');
+        let modulesBlock = document.createElement('div');
         modulesBlock.classList.add('modules');
 
         course.modules.forEach(module => {
-            const moduleItem = document.createElement('div');
+            let moduleItem = document.createElement('div');
             moduleItem.textContent = module;
             modulesBlock.appendChild(moduleItem);
         });
@@ -271,6 +266,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         parentContainer.appendChild(courseBlock);
     });
-});
+
 
 
