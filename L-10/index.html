@@ -9,10 +9,32 @@
 </head>
 <body>
 <script>
-let currentDate = new Date();
-let sessions = JSON.parse(localStorage.getItem('sessions')) || [];
-sessions.push(currentDate);
-localStorage.setItem('sessions', JSON.stringify(sessions));
+// let currentDate = new Date();
+// let sessions = JSON.parse(localStorage.getItem('sessions')) || [];
+// sessions.push(currentDate);
+// localStorage.setItem('sessions', JSON.stringify(sessions));
+
+let userSessionDate = new Date().toLocaleDateString();
+let userSessionTime = new Date().toLocaleTimeString();
+let sessionInfo = {userSessionTime,userSessionDate}
+
+
+document.addEventListener('DOMContentLoaded', ev => {
+    let sessionsFromStorage = localStorage.getItem('sessions');
+    if (!sessionsFromStorage){
+        localStorage.setItem('visits', JSON.stringify([sessionInfo]));
+    }
+
+    else {
+        let visitsArray = JSON.parse(sessionsFromStorage);
+        visitsArray.push(sessionsInfo);
+        localStorage.setItem('sessions', JSON.stringify(sessionsArray))
+
+    }
+
+
+})
+
 </script>
 </body>
 </html>
