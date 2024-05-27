@@ -18,7 +18,7 @@ let sessionInfo = {userSessionTime,userSessionDate}
 document.addEventListener('DOMContentLoaded', ev => {
     let sessionsFromStorage = localStorage.getItem('sessions');
     if (!sessionsFromStorage){
-        localStorage.setItem('visits', JSON.stringify([sessionInfo]));
+        localStorage.setItem('session', JSON.stringify([sessionInfo]));
     }
 
     else {
