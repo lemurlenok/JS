@@ -1,4 +1,22 @@
-.output {
+.output, .number, .Container, .text, .number,.price-block{
     margin-top: 20px;
 
+
 }
+
+.div, .text{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+
+/*.price-block {*/
+/*    width: 200px;*/
+/*    height: 200px;*/
+/*    background-color: lightblue;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    font-size: 24px;*/
+/*}*/

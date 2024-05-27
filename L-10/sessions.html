@@ -1,0 +1,35 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="sessionsList"></div>
+
+
+
+<script>
+    let sessions = JSON.parse(localStorage.getItem('sessions')) || [];
+
+    // Отримуємо елемент, в який будемо додавати інформацію про сесії
+    let sessionsList = document.getElementById('sessionsList');
+
+    // Проходимось по кожній сесії і будуємо DOM-структуру для неї
+    sessions.forEach(session => {
+        // Створюємо новий елемент div для кожної сесії
+        let sessionItem = document.createElement('div');
+
+        // Встановлюємо текстовий контент елементу div, використовуючи дату та час сесії
+        sessionItem.textContent = 'Дата та час відвідування: ' + session;
+
+        // Додаємо елемент div з інформацією про сесію до списку сесій
+        sessionsList.appendChild(sessionItem);
+    });
+</script>
+</body>
+</html>

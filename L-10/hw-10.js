@@ -15,38 +15,21 @@ function submitForm() {
     outputDiv.innerText = JSON.stringify(obj, null, 2);
 }
 
-
-
-
 // ==========================
 // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
 
-let numberBlock = document.getElementById("numberBlock");
-let currentNumber = parseInt(numberBlock.innerText);
-let newNumber = currentNumber + 1;
-numberBlock.innerText = newNumber;
+let number = localStorage.getItem('number') || 2;
+number++;
+document.getElementById('numberBlock').textContent = number;
+localStorage.setItem('number', number);
 
 // ==========================
 // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessions зберігається інформація про дату та час відвідування сторінки. Є ще сторінка sessions.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а побудувати дом структуру під кожну сессію
-// function addSession() {
-//     let currentDate = new Date();
-//     let sessions = JSON.parse(localStorage.getItem('sessions')) || [];
-//     sessions.push(currentDate);
-//     localStorage.setItem('sessions', JSON.stringify(sessions));
-//     window.location.href = 'sessions.html';
-// }
-// addSession();
-//
-// function getSessions() {
-//     let sessions = JSON.parse(localStorage.getItem('sessions')) || [];
-//     let sessionsList = document.getElementById('sessionsList');
-//     sessions.forEach(session => {
-//         let sessionItem = document.createElement('div');
-//         sessionItem.textContent = 'Дата та час відвідування: ' + session;
-//         sessionsList.appendChild(sessionItem);
-//     });
-// }
-// getSessions();
+
+let currentDate = new Date();
+let sessions = JSON.parse(localStorage.getItem('sessions')) || [];
+sessions.push(currentDate);
+localStorage.setItem('sessions', JSON.stringify(sessions));
 
 // =========================
 //     зробити масив на 100 об'єктів та дві кнопки prev next
@@ -62,7 +45,6 @@ for (let i = 0; i < 100; i++) {
 let itemsContainer = document.getElementById('itemsContainer');
 let prevButton = document.getElementById('prevButton');
 let nextButton = document.getElementById('nextButton');
-
 
 displayItems(0, 10);
 
@@ -90,26 +72,66 @@ nextButton.addEventListener('click', function() {
 //
 // - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
 function hideElement() {
-    // Отримання посилання на елемент з id="text"
     let element = document.getElementById('text');
-    // Перевірка, чи елемент існує
     if (element) {
-        // Приховуємо елемент
         element.style.display = 'none';
-    } else {
-        // Якщо елемент не знайдено, виводимо повідомлення про помилку
-        console.error('Елемент з id="text" не знайдено.');
     }
 }
 //
 //     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
-//
+
+function checkAge (){
+    let ageInput = document.getElementById("ageInput").value;
+    if(ageInput<18){
+        document.getElementById("message").innerText = "Іди грайся у шахи.";
+    }else {
+        document.getElementById("message").innerText = "Заходь, в нас є пундики."
+    }
+}
 //
 // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+function createTable() {
+    let rows = parseInt(document.getElementById("rows").value);
+    let cols = parseInt(document.getElementById("cols").value);
+    let content = document.getElementById("content").value;
+
+    let table = document.createElement("table");
+    for (let i = 0; i < rows; i++) {
+        let row = table.insertRow();
+        for (let x = 0; x < cols; x++) {
+            let cell = row.insertCell();
+            let textNode = document.createTextNode(content);
+            cell.appendChild(textNode);
+        }
+    }
+
+    let tableContainer = document.getElementById("tableContainer");
+    while (tableContainer.firstChild) {
+        tableContainer.removeChild(tableContainer.firstChild);
+    }
+    tableContainer.appendChild(table);
+}
 // (Додатковачастина для завдання)
 //
 // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
 // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
 //     зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
 //     При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
+// let priceBlock = document.getElementById("priceBlock");
+//
+// function updatePrice() {
+//
+//     let currentPrice = parseInt(priceBlock.textContent);
+//     let newPrice = currentPrice + 10;
+//     priceBlock.textContent = newPrice + " грн";
+//     localStorage.setItem("lastUpdateTime", Date.now());
+// }
+// function checkAndUpdatePrice() {
+//     let lastUpdateTime = localStorage.getItem("lastUpdateTime");
+//     if (!lastUpdateTime || (Date.now() - lastUpdateTime > 10000)) {
+//         updatePrice();
+//     }
+// }
+//
+// checkAndUpdatePrice();
