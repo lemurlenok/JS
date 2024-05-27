@@ -35,7 +35,7 @@ localStorage.setItem('sessions', JSON.stringify(sessions));
 
 let items = [];
 for (let i = 0; i < 100; i++) {
-    items.push({ id: i + 1, name: `Елемент ${i + 1}` });
+    items.push({ id: i + 1, name: `Щось за номером -  ${i + 1}` });
 }
 
 let itemsContainer = document.getElementById('itemsContainer');
@@ -53,13 +53,13 @@ function displayItems(start, end) {
         itemsContainer.appendChild(itemDiv);
     }
 }
-prevButton.addEventListener('click', function() {
+prev.addEventListener('click', function() {
     let firstItemId = parseInt(itemsContainer.firstChild.getAttribute('id'));
     if (firstItemId - 10 >= 1) {
         displayItems(firstItemId - 10 - 1, firstItemId - 1);
     }
 });
-nextButton.addEventListener('click', function() {
+next.addEventListener('click', function() {
     let lastItemId = parseInt(itemsContainer.lastChild.getAttribute('id'));
     if (lastItemId + 10 <= items.length) {
         displayItems(lastItemId, lastItemId + 10);
