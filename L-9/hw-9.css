@@ -1,4 +1,4 @@
-.block,.familyMember, .title, .month-duration, .hour-duration, .modules div, .item {
+.wrap,.block,.familyMember, .title, .month-duration, .hour-duration, .modules div, .item {
     background-color: #f0f0f0;
     color: #333;
     font-size: 18px;

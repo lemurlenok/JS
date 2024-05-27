@@ -4,27 +4,25 @@
 // - додати цей блок в body.
 // - клонувати його повністю, та додати клон в body.
 
-document.addEventListener("DOMContentLoaded", function() {
-    let originalBlock = document.querySelector('.block');
-    let clonedBlock = originalBlock.cloneNode(true);
-    // document.body.appendChild(clonedBlock);
-    document.body.insertBefore(clonedBlock, document.body.firstChild)
-});
+let originalBlock = document.createElement("div");
+originalBlock.classList.add("wrap", "collapse", "alpha", "beta");
+originalBlock.textContent = "Де клон блоку?";
+
+let clonedBlock = originalBlock.cloneNode(true);
+document.body.insertBefore(clonedBlock, document.body.firstChild);
 
 //
 // - Є масив:
 //     ['Main','Products','About us','Contacts']
 // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
 
-document.addEventListener("DOMContentLoaded", function() {
-    const Navigation = ['Main', 'Products', 'About us', 'Contacts'];
-    const navigMenu = document.getElementById('navigMenu');
+const Navigation = ['Main', 'Products', 'About us', 'Contacts'];
+const navigMenu = document.getElementById('navigMenu');
 
-    Navigation.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.textContent = item;
-        navigMenu.appendChild(listItem);
-    });
+Navigation.forEach(item => {
+    const listItem = document.createElement('li');
+    listItem.textContent = item;
+    navigMenu.appendChild(listItem);
 });
 
 // - Є масив
@@ -46,10 +44,12 @@ const coursesContainer = document.getElementById('coursesContainer');
 coursesAndDurationArray.forEach(course => {
     const courseBlock = document.createElement('div');
     courseBlock.classList.add('course-block');
-    courseBlock.innerHTML = `
-        <h3>${course.title}</h3>
-        <p>Duration: ${course.monthDuration} months</p>
-    `;
+    const title = document.createElement('h3');
+    title.innerText = course.title;
+    const duration = document.createElement('p');
+    duration.innerText = `Duration: ${course.monthDuration} months`;
+    courseBlock.appendChild(title);
+    courseBlock.appendChild(duration);
     coursesContainer.appendChild(courseBlock);
 });
 });
@@ -134,19 +134,41 @@ let coursesAndDurationArray = [
             },
         ];
 
+let familyListDiv = document.getElementById('family');
+for (const family of simpsons) {
+    let div = document.createElement('div');
+    div.classList.add('familyMember');
+    let img = document.createElement('img');
+    img.src = family.photo;
+    img.alt = family.name;
+    div.appendChild(img);
 
-    let familyListDiv = document.getElementById('family');
-    for (const family of simpsons) {
-        let div = document.createElement('div');
-        div.classList.add('familyMember');
-        div.innerHTML = `
-            <img src="${family.photo}" alt="${family.name}">
-            <h2>${family.name} ${family.surname}</h2>
-            <p><strong>Age:</strong> ${family.age}</p>
-            <p><strong>Info:</strong> ${family.info}</p>
-        `;
-        familyListDiv.appendChild(div);
-    }
+    let h2 = document.createElement('h2');
+    h2.innerText = `${family.name} ${family.surname}`;
+    div.appendChild(h2);
+
+    let pAge = document.createElement('p');
+    pAge.innerText = `Age: ${family.age}`;
+    div.appendChild(pAge);
+
+    let pInfo = document.createElement('p');
+    pInfo.innerText = `Info: ${family.info}`;
+    div.appendChild(pInfo);
+
+    familyListDiv.appendChild(div);
+}
+    // let familyListDiv = document.getElementById('family');
+    // for (const family of simpsons) {
+    //     let div = document.createElement('div');
+    //     div.classList.add('familyMember');
+    //     div.innerHTML = `
+    //         <img src="${family.photo}" alt="${family.name}">
+    //         <h2>${family.name} ${family.surname}</h2>
+    //         <p><strong>Age:</strong> ${family.age}</p>
+    //         <p><strong>Info:</strong> ${family.info}</p>
+    //     `;
+    //     familyListDiv.appendChild(div);
+    // }
 
 
 // =========================
