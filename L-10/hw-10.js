@@ -53,7 +53,6 @@ function displayItems(start, end) {
         itemsContainer.appendChild(itemDiv);
     }
 }
-
 prevButton.addEventListener('click', function() {
     let firstItemId = parseInt(itemsContainer.firstChild.getAttribute('id'));
     if (firstItemId - 10 >= 1) {

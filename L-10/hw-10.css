@@ -1,10 +1,10 @@
-.output, .number, .text, .number,.price-block{
+.output, .number, .text, .number,.price-block,.But{
     margin-top: 20px;
 
 
 }
 
-.div, .text{
+.div, .text, .RCCon{
     display: flex;
     flex-direction: column;
     width: 200px;
