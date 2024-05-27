@@ -6,11 +6,7 @@ function submitForm() {
     let name = document.getElementById("myForm").elements["name"].value;
     let surname = document.getElementById("myForm").elements["surname"].value;
     let age = document.getElementById("myForm").elements["age"].value;
-
-
     let obj = { name, surname, age };
-
-    // Відображення об'єкта під формою
     let outputDiv = document.getElementById("output");
     outputDiv.innerText = JSON.stringify(obj, null, 2);
 }
@@ -52,23 +48,24 @@ function displayItems(start, end) {
     itemsContainer.innerHTML = '';
     for (let i = start; i < end; i++) {
         let itemDiv = document.createElement('div');
-        itemDiv.textContent = `ID: ${items[i].id}, Назва: ${items[i].name}`;
+        itemDiv.setAttribute('id', items[i].id);
+        itemDiv.textContent = `${items[i].id}. ${items[i].name}`;
         itemsContainer.appendChild(itemDiv);
     }
 }
+
 prevButton.addEventListener('click', function() {
-    let currentIndex = items.findIndex(item => item.id === parseInt(itemsContainer.firstChild.textContent.split(':')[1]));
-    if (currentIndex - 10 >= 0) {
-        displayItems(currentIndex - 10, currentIndex);
+    let firstItemId = parseInt(itemsContainer.firstChild.getAttribute('id'));
+    if (firstItemId - 10 >= 1) {
+        displayItems(firstItemId - 10 - 1, firstItemId - 1);
     }
 });
 nextButton.addEventListener('click', function() {
-    let currentIndex = items.findIndex(item => item.id === parseInt(itemsContainer.lastChild.textContent.split(':')[1]));
-    if (currentIndex + 10 < items.length) {
-        displayItems(currentIndex + 1, currentIndex + 11);
+    let lastItemId = parseInt(itemsContainer.lastChild.getAttribute('id'));
+    if (lastItemId + 10 <= items.length) {
+        displayItems(lastItemId, lastItemId + 10);
     }
 });
-
 //
 // - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
 function hideElement() {

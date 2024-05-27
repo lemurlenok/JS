@@ -1,4 +1,4 @@
-.output, .number, .Container, .text, .number,.price-block{
+.output, .number, .text, .number,.price-block{
     margin-top: 20px;
 
 
@@ -10,7 +10,13 @@
     width: 200px;
 }
 
+.Container{
+    width: 500px;
+    height: 200px;
+    margin: 20px;
 
+
+}
 /*.price-block {*/
 /*    width: 200px;*/
 /*    height: 200px;*/
