@@ -22,10 +22,7 @@ localStorage.setItem('number', number);
 // ==========================
 // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessions зберігається інформація про дату та час відвідування сторінки. Є ще сторінка sessions.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а побудувати дом структуру під кожну сессію
 
-let currentDate = new Date();
-let sessions = JSON.parse(localStorage.getItem('sessions')) || [];
-sessions.push(currentDate);
-localStorage.setItem('sessions', JSON.stringify(sessions));
+
 
 // =========================
 //     зробити масив на 100 об'єктів та дві кнопки prev next
@@ -35,12 +32,12 @@ localStorage.setItem('sessions', JSON.stringify(sessions));
 
 let items = [];
 for (let i = 0; i < 100; i++) {
-    items.push({ id: i + 1, name: `Щось за номером -  ${i + 1}` });
+    items.push({ id: i + 1, name: `Щось за номером ${i + 1}` });
 }
 
 let itemsContainer = document.getElementById('itemsContainer');
-let prev = document.getElementById('prevButton');
-let next = document.getElementById('nextButton');
+let prevButton = document.getElementById('prevButton');
+let nextButton = document.getElementById('nextButton');
 
 displayItems(0, 10);
 
@@ -53,13 +50,13 @@ function displayItems(start, end) {
         itemsContainer.appendChild(itemDiv);
     }
 }
-prev.addEventListener('click', function() {
+prevButton.addEventListener('click', function() {
     let firstItemId = parseInt(itemsContainer.firstChild.getAttribute('id'));
     if (firstItemId - 10 >= 1) {
         displayItems(firstItemId - 10 - 1, firstItemId - 1);
     }
 });
-next.addEventListener('click', function() {
+nextButton.addEventListener('click', function() {
     let lastItemId = parseInt(itemsContainer.lastChild.getAttribute('id'));
     if (lastItemId + 10 <= items.length) {
         displayItems(lastItemId, lastItemId + 10);
@@ -114,20 +111,20 @@ function createTable() {
 // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
 //     зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
 //     При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
-// let priceBlock = document.getElementById("priceBlock");
-//
-// function updatePrice() {
-//
-//     let currentPrice = parseInt(priceBlock.textContent);
-//     let newPrice = currentPrice + 10;
-//     priceBlock.textContent = newPrice + " грн";
-//     localStorage.setItem("lastUpdateTime", Date.now());
-// }
-// function checkAndUpdatePrice() {
-//     let lastUpdateTime = localStorage.getItem("lastUpdateTime");
-//     if (!lastUpdateTime || (Date.now() - lastUpdateTime > 10000)) {
-//         updatePrice();
-//     }
-// }
-//
-// checkAndUpdatePrice();
+let priceBlock = document.getElementById("priceBlock");
+
+function updatePrice() {
+
+    let currentPrice = parseInt(priceBlock.textContent);
+    let newPrice = currentPrice + 10;
+    priceBlock.textContent = newPrice + " грн";
+    localStorage.setItem("lastUpdateTime", Date.now());
+}
+function checkAndUpdatePrice() {
+    let lastUpdateTime = localStorage.getItem("lastUpdateTime");
+    if (!lastUpdateTime || (Date.now() - lastUpdateTime > 10000)) {
+        updatePrice();
+    }
+}
+
+checkAndUpdatePrice();
