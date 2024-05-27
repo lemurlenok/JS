@@ -39,8 +39,8 @@ for (let i = 0; i < 100; i++) {
 }
 
 let itemsContainer = document.getElementById('itemsContainer');
-let prevButton = document.getElementById('prevButton');
-let nextButton = document.getElementById('nextButton');
+let prev = document.getElementById('prevButton');
+let next = document.getElementById('nextButton');
 
 displayItems(0, 10);
 
