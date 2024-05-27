@@ -157,15 +157,15 @@ for (const family of simpsons) {
 
     familyListDiv.appendChild(div);
 }
-    // let familyListDiv = document.getElementById('family');
+    // let familyListDiv = document.getElementById('family'); було цікаво використання innerHTML
     // for (const family of simpsons) {
     //     let div = document.createElement('div');
     //     div.classList.add('familyMember');
     //     div.innerHTML = `
     //         <img src="${family.photo}" alt="${family.name}">
     //         <h2>${family.name} ${family.surname}</h2>
-    //         <p><strong>Age:</strong> ${family.age}</p>
-    //         <p><strong>Info:</strong> ${family.info}</p>
+    //         <p>Age: ${family.age}</p>
+    //         <p>Info: ${family.info}</p>
     //     `;
     //     familyListDiv.appendChild(div);
     // }
@@ -272,7 +272,6 @@ let coursesArray = [
         hourDurationBlock.classList.add('hour-duration');
         hourDurationBlock.textContent = `hourDuration: ${course.hourDuration}`;
         durationBlock.appendChild(hourDurationBlock);
-
         courseBlock.appendChild(durationBlock);
 
         let modulesBlock = document.createElement('div');
