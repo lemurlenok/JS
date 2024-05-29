@@ -1,35 +1,35 @@
     // // взяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини. Відобразити всі поля кожної корзини.
-    // let productsBlock = document.getElementById('products');
-    // fetch('https://dummyjson.com/carts')
-    //     .then((value) => value.json())
-    //     .then((response) => {
-    //         let carts = response.carts;
-    //         for (const cart of carts) {
-    //             for (const product of cart.products) {
-    //                 let divProductsContainer = document.createElement('div');
-    //                 let divDescription = document.createElement('div');
-    //                 divDescription.innerText = `
-    //                     ID: ${product.id}
-    //                     title: ${product.title}
-    //                     price: ${product.price} $
-    //                     quantity: ${product.quantity} units
-    //                     total: ${product.total} $
-    //                     discount percentage: ${product.discountPercentage} %
-    //                     discounted total: ${product.discountedTotal} $
-    //                     `
-    //                 divProductsContainer.appendChild(divDescription);
-    //
-    //                 let divThumbnail = document.createElement('div')
-    //                 let productThumbnail = document.createElement('img')
-    //                 productThumbnail.src = product.thumbnail;
-    //                 divThumbnail.appendChild(productThumbnail);
-    //
-    //                 divProductsContainer.appendChild(divThumbnail);
-    //
-    //                 productsBlock.appendChild(divProductsContainer);
-    //             }
-    //         }
-    //     });
+    let productsBlock = document.getElementById('products');
+    fetch('https://dummyjson.com/carts')
+        .then((value) => value.json())
+        .then((response) => {
+            let carts = response.carts;
+            for (const cart of carts) {
+                for (const product of cart.products) {
+                    let divProductsContainer = document.createElement('div');
+                    let divDescription = document.createElement('div');
+                    divDescription.innerText = `
+                        ID: ${product.id}
+                        title: ${product.title}
+                        price: ${product.price} $
+                        quantity: ${product.quantity} units
+                        total: ${product.total} $
+                        discount percentage: ${product.discountPercentage} %
+                        discounted total: ${product.discountedTotal} $
+                        `
+                    divProductsContainer.appendChild(divDescription);
+
+                    let divThumbnail = document.createElement('div')
+                    let productThumbnail = document.createElement('img')
+                    productThumbnail.src = product.thumbnail;
+                    divThumbnail.appendChild(productThumbnail);
+
+                    divProductsContainer.appendChild(divThumbnail);
+
+                    productsBlock.appendChild(divProductsContainer);
+                }
+            }
+        });
     //     - взяти https://dummyjson.com/docs/recipes та вивести інформацію про всі рецепти. Інгредієнти повинні бути список під час відображення.
 
     let recipesBlock = document.getElementById('recipes');
