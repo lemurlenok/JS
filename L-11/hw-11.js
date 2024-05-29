@@ -9,13 +9,13 @@
     //                 let divProductsContainer = document.createElement('div');
     //                 let divDescription = document.createElement('div');
     //                 divDescription.innerText = `
-    //                     ${product.id}
-    //                     ${product.title}
-    //                     ${product.price} $
-    //                     ${product.quantity} units
-    //                     ${product.total} $
-    //                     ${product.discountPercentage} %
-    //                     ${product.discountedTotal} $
+    //                     ID: ${product.id}
+    //                     title: ${product.title}
+    //                     price: ${product.price} $
+    //                     quantity: ${product.quantity} units
+    //                     total: ${product.total} $
+    //                     discount percentage: ${product.discountPercentage} %
+    //                     discounted total: ${product.discountedTotal} $
     //                     `
     //                 divProductsContainer.appendChild(divDescription);
     //
@@ -30,47 +30,64 @@
     //             }
     //         }
     //     });
-    // //     - взяти https://dummyjson.com/docs/recipes та вивести інформацію про всі рецепти. Інгредієнти повинні бути список під час відображення.
-    //
-    // let recipesBlock = document.getElementById('recipes');
-    // fetch('https://dummyjson.com/recipes')
-    //     .then((value) => value.json())
-    //     .then((response) => {
-    //         let recipes = response.recipes;
-    //         for (const recipe of recipes) {
-    //             let divRecipesContainer = document.createElement('div');
-    //
-    //             // Назва рецепту
-    //             let recipeName = document.createElement('h2');
-    //             recipeName.innerText = recipe.name;
-    //             divRecipesContainer.appendChild(recipeName);
-    //
-    //             // Опис рецепту
-    //             let recipeDescription = document.createElement('div');
-    //             recipeDescription.innerText = `
-    //                 ID: ${recipe.id}
-    //                 Ingredients: ${recipe.ingredients}
-    //                 Instructions: ${recipe.instructions}
-    //                 Prep Time: ${recipe.prepTimeMinutes} minutes
-    //                 Cook Time: ${recipe.cookTimeMinutes} minutes
-    //                 Servings: ${recipe.servings} portions
-    //                 Difficulty: ${recipe.difficulty}
-    //                 Cuisine: ${recipe.cuisine}
-    //                 Calories Per Serving: ${recipe.caloriesPerServing} calories
-    //                 Tags: ${recipe.tags}`;
-    //             divRecipesContainer.appendChild(recipeDescription);
-    //
-    //
-    //             let divImage = document.createElement('div');
-    //             let recipeImage = document.createElement('img');
-    //             recipeImage.src = recipe.image;
-    //             divImage.appendChild(recipeImage);
-    //             divRecipesContainer.appendChild(divImage);
-    //
-    //             recipesBlock.appendChild(divRecipesContainer);
-    //         }
-    //     });
+    //     - взяти https://dummyjson.com/docs/recipes та вивести інформацію про всі рецепти. Інгредієнти повинні бути список під час відображення.
 
+    let recipesBlock = document.getElementById('recipes');
+    fetch('https://dummyjson.com/recipes')
+        .then((value) => value.json())
+        .then((response) => {
+            let recipes = response.recipes;
+            for (const recipe of recipes) {
+                let divRecipesContainer = document.createElement('div');
+
+                let recipeName = document.createElement('h2');
+                recipeName.innerText = recipe.name;
+                divRecipesContainer.appendChild(recipeName);
+
+                let divImage = document.createElement('div');
+                let recipeImage = document.createElement('img');
+                recipeImage.src = recipe.image;
+                divImage.appendChild(recipeImage);
+                divRecipesContainer.appendChild(divImage);
+
+                let recipeDescription = document.createElement('div');
+                recipeDescription.innerHTML = `
+                <p><strong>ID:</strong>  ${recipe.id} </p>
+                <p><strong>Prep Time: </strong>${recipe.prepTimeMinutes} minutes</p>
+                <p><strong>Cook Time: </strong>${recipe.cookTimeMinutes} minutes</p>
+                <p><strong>Servings: </strong>${recipe.servings} portions</p>
+                <p><strong>Difficulty: </strong>${recipe.difficulty}</p>
+                <p><strong>Cuisine: </strong>${recipe.cuisine}</p>
+                <p><strong>Calories Per Serving: </strong>${recipe.caloriesPerServing} ckal</p>
+                <p><strong>Tags: </strong>${recipe.tags}</p>`;
+                divRecipesContainer.appendChild(recipeDescription);
+
+                let divInstruction = document.createElement('div')
+                divInstruction.classList = 'instruction'
+
+                let ul = document.createElement('ul')
+                ul.innerHTML = `<h3>Ingredients:</h3>`
+                for (const ingredient of recipe.ingredients) {
+                    let li = document.createElement('li')
+                    li.innerText = `${ingredient}`
+                    ul.append(li)
+                }
+
+                let ol = document.createElement('ol')
+                ol.innerHTML = `<h3> Instruction:</h3>`
+                for (const step of recipe.instructions) {
+                    let li = document.createElement('li')
+                    li.innerText = `${step}`
+                    ol.append(li)
+                }
+
+                divInstruction.append(ul, ol)
+                divRecipesContainer.appendChild(divInstruction);
+
+
+                recipesBlock.appendChild(divRecipesContainer);
+            }
+        });
 
 //     - зробити файл users.html
 // з ендпоінту http://jsonplaceholder.typicode.com/users отримати всіх користувачів
