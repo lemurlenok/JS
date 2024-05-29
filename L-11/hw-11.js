@@ -75,9 +75,9 @@
 
                 let ol = document.createElement('ol')
                 ol.innerHTML = `<h3> Instruction:</h3>`
-                for (const step of recipe.instructions) {
+                for (const instruct of recipe.instructions) {
                     let li = document.createElement('li')
-                    li.innerText = `${step}`
+                    li.innerText = `${instruct}`
                     ol.append(li)
                 }
 
